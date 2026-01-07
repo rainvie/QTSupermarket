@@ -2861,24 +2861,6 @@ debug/Check_Mainwindow.o: src/Check/Check_Mainwindow.cpp include/Check/Check_Mai
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimer.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialogButtonBox \
 		ui_Check_Mainwindow.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QGroupBox \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qgroupbox.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QListWidget \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QMenuBar \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qmenubar.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qmenu.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QSpacerItem \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QStatusBar \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
 		../../QT/6.10.1/mingw_64/include/QtCore/QEvent \
@@ -2886,8 +2868,15 @@ debug/Check_Mainwindow.o: src/Check/Check_Mainwindow.cpp include/Check/Check_Mai
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDateEdit \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QGroupBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qgroupbox.h \
 		include/Style/StyleManager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Check_Mainwindow.o src\Check\Check_Mainwindow.cpp
 
@@ -3096,32 +3085,6 @@ debug/LoginDialog.o: src/LogIn/LoginDialog.cpp include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QString \
 		../../QT/6.10.1/mingw_64/include/QtCore/QEvent \
-		ui_LoginDialog.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
-		../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qframe.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextdocument.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QLineEdit \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlineedit.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextcursor.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextformat.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qpen.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextoption.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QPushButton \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/LogIn/dbmanager.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/QSqlDatabase \
 		../../QT/6.10.1/mingw_64/include/QtSql/qsqldatabase.h \
@@ -3139,6 +3102,7 @@ debug/LoginDialog.o: src/LogIn/LoginDialog.cpp include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QVariantMap \
 		../../QT/6.10.1/mingw_64/include/QtCore/qvariantmap.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QMap \
+		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.10.1/mingw_64/include/QtCore/QDateTime \
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
@@ -4734,20 +4698,6 @@ debug/Product.o: src/Product/Product.cpp include/Product/Product.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimer.h \
 		ui_Product.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/QAction \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractitemview.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/qitemselectionmodel.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QStatusBar \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QToolBar \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qtoolbar.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/Product/AddProductDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QSpinBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qspinbox.h \
@@ -4760,7 +4710,13 @@ debug/Product.o: src/Product/Product.cpp include/Product/Product.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
 		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qitemselectionmodel.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QPair \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
 		include/Product/SalesStatisticsDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDateEdit \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
@@ -5007,47 +4963,6 @@ debug/registerdialog.o: src/LogIn/registerdialog.cpp include/LogIn/registerdialo
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		ui_registerdialog.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QComboBox \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qcombobox.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qstyleoption.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qvalidator.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/qregularexpression.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qslider.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractslider.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qstyle.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qtabbar.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qtabwidget.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qrubberband.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qframe.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QFrame \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextdocument.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QLineEdit \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlineedit.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextcursor.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextformat.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qpen.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextoption.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QPushButton \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QSpinBox \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qspinbox.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/Style/StyleManager.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QMessageBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -5258,36 +5173,6 @@ debug/memberregisterdialog.o: src/LogIn/memberregisterdialog.cpp include/LogIn/m
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		ui_memberregisterdialog.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QDateEdit \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qvalidator.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/qregularexpression.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qframe.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextdocument.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QLineEdit \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qlineedit.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextcursor.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextformat.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qpen.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/qtextoption.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QPushButton \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/LogIn/dbmanager.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/QSqlDatabase \
 		../../QT/6.10.1/mingw_64/include/QtSql/qsqldatabase.h \
@@ -5306,12 +5191,15 @@ debug/memberregisterdialog.o: src/LogIn/memberregisterdialog.cpp include/LogIn/m
 		../../QT/6.10.1/mingw_64/include/QtCore/QVariantMap \
 		../../QT/6.10.1/mingw_64/include/QtCore/qvariantmap.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QMap \
+		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.10.1/mingw_64/include/QtCore/QDateTime \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QMessageBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qmessagebox.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QRegularExpression \
-		../../QT/6.10.1/mingw_64/include/QtGui/QRegularExpressionValidator
+		../../QT/6.10.1/mingw_64/include/QtCore/qregularexpression.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/QRegularExpressionValidator \
+		../../QT/6.10.1/mingw_64/include/QtGui/qvalidator.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\memberregisterdialog.o src\LogIn\memberregisterdialog.cpp
 
 debug/saleshistorydialog.o: src/LogIn/saleshistorydialog.cpp include/LogIn/SalesHistoryDialog.h \

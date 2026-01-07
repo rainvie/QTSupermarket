@@ -313,7 +313,8 @@ Makefile: ../../supermarket.pro ../../../../QT/6.10.1/mingw_64/mkspecs/win32-g++
 		../../../../QT/6.10.1/mingw_64/lib/Qt6Core.prl \
 		../../../../QT/6.10.1/mingw_64/lib/Qt6EntryPoint.prl \
 		../../../../QT/6.10.1/mingw_64/mkspecs/features/build_pass.prf \
-		../../resources/icon.qrc
+		../../icon.qrc \
+		../../re1.qrc
 	$(QMAKE) -o Makefile ..\..\supermarket.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../../QT/6.10.1/mingw_64/mkspecs/features/spec_pre.prf:
 ../../../../QT/6.10.1/mingw_64/mkspecs/features/device_config.prf:
@@ -558,7 +559,8 @@ Makefile: ../../supermarket.pro ../../../../QT/6.10.1/mingw_64/mkspecs/win32-g++
 ../../../../QT/6.10.1/mingw_64/lib/Qt6Core.prl:
 ../../../../QT/6.10.1/mingw_64/lib/Qt6EntryPoint.prl:
 ../../../../QT/6.10.1/mingw_64/mkspecs/features/build_pass.prf:
-../../resources/icon.qrc:
+../../icon.qrc:
+../../re1.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\..\supermarket.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

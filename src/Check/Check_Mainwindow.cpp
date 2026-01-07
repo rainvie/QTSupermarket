@@ -121,13 +121,13 @@ void Check_Mainwindow::setupUI(){
 
     QLabel* cashierLabel = new QLabel(this);         // 创建收银员标签（左侧）
     cashierLabel->setText(QString("当前操作员：%1").arg(username));
-    cashierLabel->setStyleSheet("margin-left: 10px;");  //左侧留边距
+    cashierLabel->setStyleSheet("color: black; margin-left: 10px;");  //设置字体颜色为黑色，左侧留边距
 
 
     QLabel* dateLabel = new QLabel(this);           //创建日期标签（右侧）
     QDate currentDate = QDate::currentDate();  //获取当前日期
     dateLabel->setText(currentDate.toString("当前日期：yyyy-MM-dd"));  //格式化日期为"年-月-日"
-    dateLabel->setStyleSheet("margin-right: 10px;");  //右侧留边距
+    dateLabel->setStyleSheet("color: black; margin-right: 10px;");  //设置字体颜色为黑色，右侧留边距
 
     //添加到状态栏
     statusBar()->addWidget(cashierLabel);  // 左侧添加，随窗口缩放左移

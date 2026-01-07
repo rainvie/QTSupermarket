@@ -11,6 +11,7 @@ debug/memberregisterdialog.o
 debug/saleshistorydialog.o
 debug/StyleManager.o
 debug/qrc_icon.o
+debug/qrc_re1.o
 debug/moc_Check_Mainwindow.o
 debug/moc_LoginDialog.o
 debug/moc_dbmanager.o
