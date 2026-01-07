@@ -11,9 +11,11 @@
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QTextEdit>
+#include <QTextBrowser>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QRegularExpression>
 #include <QUrl>
 
 SalesStatisticsDialog::SalesStatisticsDialog(QWidget *parent) : QDialog(parent)
@@ -22,7 +24,7 @@ SalesStatisticsDialog::SalesStatisticsDialog(QWidget *parent) : QDialog(parent)
     setMinimumSize(900, 650);  // 增加最小窗口大小以确保按钮可见
 
     // 初始化成员变量
-    apiKey = "";  // 初始化API密钥为空
+    apiKey = "9ced0c1f6db04aaab3de49bf33817915.jCBugszEYIAfLN6D";  // 初始化API密钥
 
     setupUI();
     loadSalesData();
@@ -83,23 +85,22 @@ void SalesStatisticsDialog::setupUI()
     QPushButton *exportBtn = new QPushButton("导出CSV", this);
     aiAnalysisBtn = new QPushButton("🤖 AI分析", this);  // 添加表情符号使其更显眼
     aiAnalysisBtn->setStyleSheet("QPushButton {"
-                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                "                                    stop: 0 #FF5722, stop: 1 #E64A19);"  // 渐变橙红色背景
+                                "    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FF5722, stop: 1 #E64A19);"  // 渐变橙红色背景
                                 "    border: 2px solid #B71C1C;"      // 红色边框
                                 "    color: white;"                   // 白色文字
                                 "    padding: 12px 24px;"             // 更大的內边距
                                 "    text-align: center;"             // 文字居中
-                                "    font-size: 15px;"               // 更大的字体
+                                "    font-size: 18px;"               // 更大的字体
                                 "    font-weight: bold;"              // 加粗字体
                                 "    border-radius: 8px;"             // 更大的圆角
+                                "    min-width: 120px;"               // 设置最小宽度
+                                "    min-height: 45px;"               // 设置最小高度
                                 "}"
                                 "QPushButton:hover {"
-                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                "                                    stop: 0 #FF7043, stop: 1 #D84315);"  // 悬停时的渐变色
+                                "    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FF7043, stop: 1 #D84315);"  // 悬停时的渐变色
                                 "}"
                                 "QPushButton:pressed {"
-                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                "                                    stop: 0 #E64A19, stop: 1 #BF360C);"  // 按下时的渐变色
+                                "    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #E64A19, stop: 1 #BF360C);"  // 按下时的渐变色
                                 "    border: 2px solid #8E0E00;"      // 按下时更深的边框
                                 "    padding: 11px 23px;"             // 按下时稍微缩小内边距，产生按下效果
                                 "}");
@@ -337,22 +338,37 @@ void SalesStatisticsDialog::performAIAnalysis()
                            "4. 商品组合优化建议\n"
                            "5. 未来销售预测").arg(salesData);
 
-    // 创建API请求
-    QUrl url("https://api.openai.com/v1/chat/completions");  // 这里使用OpenAI API作为示例
+    // 创建API请求 - 使用智谱AI API
+    QUrl url("https://open.bigmodel.cn/api/paas/v4/chat/completions");
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setRawHeader("Authorization", QString("Bearer %1").arg(apiKey).toUtf8());
 
-    // 准备请求体
+    // 准备请求体 - 使用智谱AI的参数格式
     QJsonObject jsonBody;
-    jsonBody["model"] = "gpt-3.5-turbo";
+    jsonBody["model"] = "glm-4.7"; // 使用智谱AI的GLM-4.7模型
     QJsonArray messages;
-    QJsonObject message;
-    message["role"] = "user";
-    message["content"] = prompt;
-    messages.append(message);
+
+    // 添加系统提示
+    QJsonObject systemMessage;
+    systemMessage["role"] = "system";
+    systemMessage["content"] = "你是一名专业的销售数据分析专家，擅长分析商品销售数据并提供商业洞察。";
+    messages.append(systemMessage);
+
+    // 添加用户请求
+    QJsonObject userMessage;
+    userMessage["role"] = "user";
+    userMessage["content"] = prompt;
+    messages.append(userMessage);
+
     jsonBody["messages"] = messages;
-    jsonBody["temperature"] = 0.7;
+    jsonBody["temperature"] = 1.0; // 智谱AI推荐的温度值
+    jsonBody["max_tokens"] = 65536; // 设置最大token数
+
+    // 添加thinking参数（如果智谱AI支持）
+    QJsonObject thinking;
+    thinking["type"] = "enabled";
+    jsonBody["thinking"] = thinking;
 
     QJsonDocument jsonDoc(jsonBody);
     QByteArray data = jsonDoc.toJson();
@@ -401,14 +417,18 @@ void SalesStatisticsDialog::onAIReplyFinished(QNetworkReply* reply)
 
                 QVBoxLayout *layout = new QVBoxLayout(resultDialog);
 
-                QTextEdit *textEdit = new QTextEdit(resultDialog);
-                textEdit->setPlainText(content);
-                textEdit->setReadOnly(true);
+                // 将Markdown内容转换为HTML
+                QString htmlContent = convertMarkdownToHTML(content);
+
+                // 使用QTextBrowser显示富文本内容
+                QTextBrowser *textBrowser = new QTextBrowser(resultDialog);
+                textBrowser->setHtml(htmlContent);
+                textBrowser->setOpenExternalLinks(true); // 允许打开外部链接
 
                 QPushButton *closeBtn = new QPushButton("关闭", resultDialog);
                 connect(closeBtn, &QPushButton::clicked, resultDialog, &QDialog::accept);
 
-                layout->addWidget(textEdit);
+                layout->addWidget(textBrowser);
                 layout->addWidget(closeBtn);
 
                 resultDialog->show();
@@ -434,7 +454,79 @@ void SalesStatisticsDialog::onAIReplyFinished(QNetworkReply* reply)
     reply->deleteLater();
 }
 
+// 简单的Markdown到HTML转换函数
+QString SalesStatisticsDialog::convertMarkdownToHTML(const QString &markdown)
+{
+    QString html = markdown;
+
+    // 转换标题 (# 标题)
+    html.replace(QRegularExpression("^#\\s+(.+)$", QRegularExpression::MultilineOption), "<h1>\\1</h1>");
+    html.replace(QRegularExpression("^##\\s+(.+)$", QRegularExpression::MultilineOption), "<h2>\\1</h2>");
+    html.replace(QRegularExpression("^###\\s+(.+)$", QRegularExpression::MultilineOption), "<h3>\\1</h3>");
+
+    // 转换粗体 (**text** 或 __text__)
+    html.replace(QRegularExpression("\\*\\*(.+?)\\*\\*"), "<strong>\\1</strong>");
+    html.replace(QRegularExpression("__(.+?)__"), "<strong>\\1</strong>");
+
+    // 转换斜体 (*text* 或 _text_)
+    html.replace(QRegularExpression("\\*(.+?)\\*"), "<em>\\1</em>");
+    html.replace(QRegularExpression("_(.+?)_"), "<em>\\1</em>");
+
+    // 重新处理粗体，因为上面的斜体处理可能影响了粗体
+    html.replace(QRegularExpression("\\*\\*(.+?)\\*\\*"), "<strong>\\1</strong>");
+    html.replace(QRegularExpression("__(.+?)__"), "<strong>\\1</strong>");
+
+    // 转换行内代码 (`code`)
+    html.replace(QRegularExpression("`(.+?)`"), "<code style='background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px;'>\\1</code>");
+
+    // 转换分隔线 (---)
+    html.replace(QRegularExpression("^---$", QRegularExpression::MultilineOption), "<hr>");
+
+    // 处理列表 - 先将列表项标记出来
+    QStringList lines = html.split("\n");
+    QStringList processedLines;
+    bool inList = false;
+
+    for (const QString &line : lines) {
+        if (line.startsWith("- ") || line.startsWith("* ")) {
+            if (!inList) {
+                processedLines << "<ul>";
+                inList = true;
+            }
+            QString listItem = line.mid(2); // 移除 "- " 或 "* "
+            processedLines << "<li>" + listItem + "</li>";
+        } else {
+            if (inList) {
+                processedLines << "</ul>";
+                inList = false;
+            }
+            processedLines << line;
+        }
+    }
+
+    if (inList) {
+        processedLines << "</ul>";
+    }
+
+    html = processedLines.join("\n");
+
+    // 转换换行（保留段落结构）
+    html.replace(QRegularExpression("\n\n"), "</p><p>");
+    html.replace("\n", "<br>");
+
+    // 包装在段落标签中
+    html = "<p>" + html + "</p>";
+
+    // 替换多余的段落标签
+    html.replace("<p></p>", "");
+
+    // 添加基本样式
+    html = "<div style='font-family: \"Microsoft YaHei\", Arial, sans-serif; line-height: 1.6; padding: 10px;'>" + html + "</div>";
+
+    return html;
+}
+
 void SalesStatisticsDialog::setAPIKey(const QString &key)
 {
-    apiKey = key;
+    apiKey = key; // 设置AI分析API密钥
 }

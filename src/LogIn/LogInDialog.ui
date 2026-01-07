@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>400</height>
+    <width>650</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,10 +25,10 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>100</y>
-     <width>370</width>
-     <height>180</height>
+     <x>100</x>
+     <y>120</y>
+     <width>450</width>
+     <height>200</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -45,8 +45,8 @@
        <widget class="QLineEdit" name="usernameEdit">
         <property name="font">
          <font>
-          <family>Adobe 黑体 Std R</family>
-          <pointsize>9</pointsize>
+          <family>Microsoft YaHei</family>
+          <pointsize>12</pointsize>
           <bold>false</bold>
          </font>
         </property>
@@ -67,8 +67,8 @@
        <widget class="QLineEdit" name="passwordEdit">
         <property name="font">
          <font>
-          <family>Adobe 黑体 Std R</family>
-          <pointsize>9</pointsize>
+          <family>Microsoft YaHei</family>
+          <pointsize>12</pointsize>
           <bold>false</bold>
          </font>
         </property>
@@ -95,15 +95,15 @@
   <widget class="QLabel" name="errorLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>345</y>
-     <width>470</width>
-     <height>20</height>
+     <x>50</x>
+     <y>410</y>
+     <width>550</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>黑体</family>
+     <family>Microsoft YaHei</family>
      <pointsize>14</pointsize>
      <bold>true</bold>
     </font>
@@ -115,10 +115,10 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>280</y>
-     <width>300</width>
-     <height>50</height>
+     <x>150</x>
+     <y>340</y>
+     <width>350</width>
+     <height>60</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -130,7 +130,7 @@
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>35</height>
+        <height>30</height>
        </size>
       </property>
      </widget>
@@ -143,7 +143,7 @@
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>35</height>
+        <height>30</height>
        </size>
       </property>
      </widget>
@@ -153,16 +153,16 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>25</y>
-     <width>220</width>
-     <height>60</height>
+     <x>200</x>
+     <y>30</y>
+     <width>250</width>
+     <height>70</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>24</pointsize>
+     <family>Microsoft YaHei</family>
+     <pointsize>20</pointsize>
      <bold>true</bold>
     </font>
    </property>
@@ -182,10 +182,10 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>15</y>
-     <width>120</width>
-     <height>80</height>
+     <x>60</x>
+     <y>18</y>
+     <width>80</width>
+     <height>60</height>
     </rect>
    </property>
    <property name="cursor">

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>340</width>
-    <height>385</height>
+    <width>400</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>30</x>
      <y>50</y>
-     <width>288</width>
-     <height>211</height>
+     <width>340</width>
+     <height>250</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -78,9 +78,9 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>290</y>
-     <width>281</width>
-     <height>80</height>
+     <y>320</y>
+     <width>340</width>
+     <height>100</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -89,6 +89,12 @@
       <property name="text">
        <string>注册</string>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
@@ -96,12 +102,24 @@
       <property name="text">
        <string>重置</string>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="backButton">
       <property name="text">
        <string>返回</string>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
       </property>
      </widget>
     </item>

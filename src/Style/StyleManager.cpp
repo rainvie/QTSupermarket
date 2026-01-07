@@ -12,7 +12,7 @@ QString StyleManager::getApplicationStyle() const
         /* Global Application Styles */
         * {
             font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
-            font-size: 10pt;
+            font-size: 12pt;
         }
 
         QMainWindow {
@@ -30,13 +30,14 @@ QString StyleManager::getApplicationStyle() const
             background-color: #34495e;
             color: white;
             border: none;
-            padding: 4px;
+            padding: 6px;
         }
 
         QMenuBar::item {
             background: transparent;
-            padding: 8px 16px;
+            padding: 12px 20px;
             border-radius: 8px;
+            font-size: 12pt;
         }
 
         QMenuBar::item:selected {
@@ -50,15 +51,16 @@ QString StyleManager::getApplicationStyle() const
         QToolBar {
             background-color: #34495e;
             border: none;
-            padding: 6px;
-            spacing: 4px;
+            padding: 8px;
+            spacing: 6px;
         }
 
         QStatusBar {
             background-color: #34495e;
             color: white;
             border: none;
-            padding: 6px;
+            padding: 8px;
+            font-size: 12pt;
         }
 
         QStatusBar QLabel {
@@ -70,16 +72,16 @@ QString StyleManager::getApplicationStyle() const
             border: none;
             border-radius: 10px;
             margin-top: 1ex;
-            padding: 12px;
+            padding: 15px;
             background-color: #ffffff;
         }
 
         QGroupBox::title {
             subcontrol-origin: margin;
             left: 12px;
-            padding: 0 8px 0 8px;
+            padding: 0 10px 0 10px;
             color: #3498db;
-            font-size: 11pt;
+            font-size: 13pt;
         }
 
         QFrame {
@@ -103,7 +105,7 @@ QString StyleManager::getButtonStyle() const
             padding: 8px 16px;
             font-weight: bold;
             min-height: 30px;
-            font-size: 9pt;
+            font-size: 11pt;
         }
 
         QPushButton:hover {
@@ -191,12 +193,12 @@ QString StyleManager::getTableStyle() const
             gridline-color: #e4e7ed;
             selection-background-color: #e3f2fd;
             selection-color: #2c3e50;
-            font-size: 10pt;
+            font-size: 11pt;
             padding: 4px;
         }
 
         QTableView::item {
-            padding: 8px 12px;
+            padding: 10px 14px;
             border: none;
             selection-background-color: #e3f2fd;
         }
@@ -214,10 +216,10 @@ QString StyleManager::getTableStyle() const
         QHeaderView::section {
             background-color: #34495e;
             color: white;
-            padding: 10px;
+            padding: 12px;
             border: none;
             font-weight: bold;
-            font-size: 10pt;
+            font-size: 12pt;
         }
 
         QHeaderView::section:horizontal {
@@ -243,18 +245,18 @@ QString StyleManager::getListViewStyle() const
             background-color: #ffffff;
             border: 1px solid #dcdfe6;
             border-radius: 6px;
-            padding: 8px;
-            font-size: 10pt;
+            padding: 10px;
+            font-size: 12pt;
         }
 
         QListWidget::item {
             background-color: #f8f9fa;
             border: 1px solid #e4e7ed;
             border-radius: 8px;
-            padding: 12px;
-            margin: 6px;
-            font-size: 10pt;
-            min-height: 50px;
+            padding: 15px;
+            margin: 8px;
+            font-size: 12pt;
+            min-height: 60px;
         }
 
         QListWidget::item:selected {
@@ -281,11 +283,11 @@ QString StyleManager::getLineEditStyle() const
             background-color: #ffffff;
             border: 1px solid #dcdfe6;
             border-radius: 6px;
-            padding: 10px;
+            padding: 12px;
             color: #2c3e50;
             selection-background-color: #3498db;
             selection-color: white;
-            font-size: 10pt;
+            font-size: 12pt;
         }
 
         QLineEdit:focus {
@@ -308,10 +310,10 @@ QString StyleManager::getComboBoxStyle() const
             background-color: #ffffff;
             border: 1px solid #dcdfe6;
             border-radius: 6px;
-            padding: 10px 25px 10px 12px;
-            min-height: 36px;
+            padding: 12px 30px 12px 15px;
+            min-height: 40px;
             color: #2c3e50;
-            font-size: 10pt;
+            font-size: 12pt;
         }
 
         QComboBox:focus {

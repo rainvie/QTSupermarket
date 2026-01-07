@@ -102,7 +102,7 @@ void Check_Mainwindow::setupUI(){
             m_showAllProductsCheckBox->setChecked(true);  // 默认选中，显示所有商品
             m_showAllProductsCheckBox->setStyleSheet("QCheckBox {"
                                                    "    color: #1565C0;"      // 深蓝色文字
-                                                   "    font-size: 12px;"     // 字体大小
+                                                   "    font-size: 16px;"     // 字体大小
                                                    "    font-weight: bold;"   // 加粗
                                                    "    spacing: 5px;"        // 间距
                                                    "}"
@@ -128,7 +128,7 @@ void Check_Mainwindow::setupUI(){
                                          "    color: white;"                   // 白色文字
                                          "    padding: 8px 12px;"              // 内边距
                                          "    text-align: center;"             // 文字居中
-                                         "    font-size: 12px;"                // 字体大小
+                                         "    font-size: 16px;"                // 字体大小
                                          "    font-weight: bold;"              // 加粗字体
                                          "    border-radius: 6px;"             // 圆角
                                          "}"
@@ -174,11 +174,11 @@ void Check_Mainwindow::setupUI(){
 
             // 连接AI分析按钮点击信号
             connect(m_aiAnalysisBtn, &QPushButton::clicked, this, [this]() {
-                // 显示一个简单的信息对话框，说明AI功能
+                // 显示一个信息对话框 explaining where to find the AI analysis
                 QMessageBox::information(this, "AI分析",
-                                       "AI分析功能正在开发中...\n"
-                                       "此功能将分析销售数据并提供商业洞察。\n"
-                                       "API密钥可在设置中配置。");
+                                       "AI分析功能已实现！\n"
+                                       "请在主界面的“销售统计看板”功能中使用AI分析。\n"
+                                       "该功能会分析销售数据并提供商业洞察。");
             });
         }
     }
@@ -265,9 +265,10 @@ QStringList Check_Mainwindow::getcategory() {
 
 
     //调用getAllProducts() 获取所有商品的ID
-    QList<QMap<QString, QVariant>> allProducts = DBManager::instance().getAllProducts();
+    const auto& allProducts = DBManager::instance().getAllProducts();
     QSet<int> productIds;                                 //存储所有商品的ID同时去重
-    for (const auto& product : allProducts) {
+    for (auto it = allProducts.begin(); it != allProducts.end(); ++it) {
+        const auto& product = *it;
         productIds.insert(product["id"].toInt());
     }
 
@@ -304,7 +305,8 @@ void Check_Mainwindow::initcategory(){
 
 
 
-    for (const QString& category : categories) {
+    for (auto it = categories.begin(); it != categories.end(); ++it) {
+        const QString& category = *it;
         QPushButton* btn = new QPushButton(category,categoryWidget);
         btn->setCheckable(true);                                //设置为单选按钮
         if (category == "全部") btn->setChecked(true);          //默认选中“全部”分类
@@ -349,7 +351,8 @@ void Check_Mainwindow::updateProduct(const QString& category){
 
 
 
-    for (const auto& productData : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& productData = *it;
         PRoduct product(
             productData["id"].toInt(),
             productData["name"].toString(),
@@ -446,7 +449,8 @@ void Check_Mainwindow::chooselistWidgetitemDoubleClicked(QListWidgetItem *item){
     //检查购物车中该商品的已有数量
     int existingQuantity = 0;
     bool found = false;
-    for (const auto& cartItem : m_cartItems) {
+    for (auto it = m_cartItems.begin(); it != m_cartItems.end(); ++it) {
+        const auto& cartItem = *it;
         if (cartItem.product().id() == productId) {
             existingQuantity = cartItem.quantity();
             found = true;
@@ -467,7 +471,8 @@ void Check_Mainwindow::chooselistWidgetitemDoubleClicked(QListWidgetItem *item){
     //若未超过库存，则更新购物车
     if (found) {
         //若购物车中已有该商品，就更新数量
-        for (auto& cartItem : m_cartItems) {
+        for (auto it = m_cartItems.begin(); it != m_cartItems.end(); ++it) {
+            auto& cartItem = *it;
             if (cartItem.product().id() == productId) {
                 cartItem.setQuantity(existingQuantity + addQuantity);
                 break;
@@ -664,27 +669,25 @@ void Check_Mainwindow::paybtnclicked()
 
     //用getProductById记录原始库存
     QMap<int, int> originalStock;
-    bool stockSnapshotSuccess = true;
 
-    for (const auto& cartItem : m_cartItems) {
+    for (auto it = m_cartItems.begin(); it != m_cartItems.end(); ++it) {
+        const auto& cartItem = *it;
         int productId = cartItem.product().id();
         QMap<QString, QVariant> product = DBManager::instance().getProductById(productId);
 
-        if (!product.isEmpty()) {
-            originalStock[productId] = product["stock"].toInt();          //查询每个商品的库存信息，并存储到originalStock中
-        } else {
-            stockSnapshotSuccess = false;
+        if (product.isEmpty()) {
             QMessageBox::critical(this, "错误", QString("获取商品(ID:%1)库存失败").arg(productId));
             return;
+        } else {
+            originalStock[productId] = product["stock"].toInt();          //查询每个商品的库存信息，并存储到originalStock中
         }
     }
-
-    if (!stockSnapshotSuccess) return;
 
     //扣减库存
     bool stockDeductionSuccess = true;
 
-    for (const auto& cartItem : m_cartItems) {
+    for (auto it = m_cartItems.begin(); it != m_cartItems.end(); ++it) {
+        const auto& cartItem = *it;
         int productId = cartItem.product().id();
         int buyQuantity = cartItem.quantity();
 
@@ -720,7 +723,8 @@ void Check_Mainwindow::paybtnclicked()
 
     //将购物车商品转化为销售明细列表，准备插入数据库
     QList<QVariantMap> saleItems;
-    for (const auto& cartItem : m_cartItems) {
+    for (auto it = m_cartItems.begin(); it != m_cartItems.end(); ++it) {
+        const auto& cartItem = *it;
         QVariantMap itemData;
         itemData["product_id"] = cartItem.product().id();      //商品ID
         itemData["quantity"] = cartItem.quantity();            //购买数量

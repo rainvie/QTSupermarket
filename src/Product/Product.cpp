@@ -208,7 +208,8 @@ void Product::loadProducts()
 
     QList<QMap<QString, QVariant>> lowStockProducts; // 存储库存不足的商品
 
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         int id = product["id"].toInt();
         QString name = product["name"].toString();
         QString barcode = product["barcode"].toString();
@@ -505,7 +506,8 @@ void Product::onGenerateInventoryReport()
     int lowStockCount = 0;  // 低库存商品数量
     int totalStock = 0;  // 总库存数量
 
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         int id = product["id"].toInt();
         QString name = product["name"].toString();
         QString barcode = product["barcode"].toString();
@@ -607,7 +609,8 @@ void Product::onGenerateReportStatistics()
     QMap<QString, int> categoryCount;
     QMap<QString, int> categoryStock;
 
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         QString name = product["name"].toString();
         QString category = product["category"].toString();
         double price = product["price"].toDouble();
@@ -816,14 +819,16 @@ void Product::onSearchProductClicked()
         products = dbManager->searchProducts(keyword);
     } else {
         QList<QMap<QString, QVariant>> allProducts = dbManager->searchProducts(keyword);
-        for (const auto& product : allProducts) {
+        for (auto it = allProducts.begin(); it != allProducts.end(); ++it) {
+            const auto& product = *it;
             if (product["category"].toString() == category) {
                 products.append(product);
             }
         }
     }
 
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         int id = product["id"].toInt();
         QString name = product["name"].toString();
         QString barcode = product["barcode"].toString();
@@ -967,7 +972,8 @@ void Product::createInventoryChart()
     int count = 0;
     const int MAX_ITEMS = 10; // 最多显示10个商品
 
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         if (count >= MAX_ITEMS) break;
 
         QString name = product["name"].toString();
@@ -993,7 +999,8 @@ void Product::createInventoryChart()
     QStringList categories;
     int maxStock = 0;
     count = 0;
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         if (count >= MAX_ITEMS) break;
         categories << product["name"].toString().left(8); // 只显示前8个字符避免标签过长
 
@@ -1030,7 +1037,8 @@ void Product::createWarningChart()
     int lowStockCount = 0;
     int normalStockCount = 0;
 
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         int stock = product["stock"].toInt();
         int reorderPoint = product["reorder_point"].toInt();
 
@@ -1080,7 +1088,8 @@ void Product::createBestSellingChart()
     QList<QMap<QString, QVariant>> products = dbManager->getAllProducts();
 
     std::vector<std::pair<QString, int>> salesEstimateList;
-    for (const auto& product : products) {
+    for (auto it = products.begin(); it != products.end(); ++it) {
+        const auto& product = *it;
         QString name = product["name"].toString();
         int stock = product["stock"].toInt();
         int reorderPoint = product["reorder_point"].toInt();
@@ -1108,7 +1117,8 @@ void Product::createBestSellingChart()
     const int MAX_ITEMS = 10;
     QStringList categories;
 
-    for (const auto& item : salesEstimateList) {
+    for (auto it = salesEstimateList.begin(); it != salesEstimateList.end(); ++it) {
+        const auto& item = *it;
         if (count >= MAX_ITEMS) break;
 
         *bestSellingSet << item.second;
@@ -1156,7 +1166,8 @@ void Product::showLowStockProducts(const QList<QMap<QString, QVariant>>& lowStoc
 {
     if (!lowStockProducts.isEmpty()) {
         QString message = "以下商品库存低于补货点：\n";
-        for (const auto& product : lowStockProducts) {
+        for (auto it = lowStockProducts.begin(); it != lowStockProducts.end(); ++it) {
+            const auto& product = *it;
             int stock = product["stock"].toInt();
             int reorderPoint = product["reorder_point"].toInt();
             message += QString("ID: %1, 名称: %2, 库存: %3, 补货点: %4\n")
