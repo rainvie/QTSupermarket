@@ -108,11 +108,7 @@ template <> constexpr inline auto Check_Mainwindow::qt_create_metaobjectdata<qt_
         "paybtnclicked",
         "backbtnclicked",
         "addmemberclicked",
-        "on_historyBtn_clicked",
-        "onShowAllProductsChanged",
-        "Qt::CheckState",
-        "state",
-        "onAIAnalysisClicked"
+        "on_historyBtn_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -136,12 +132,6 @@ template <> constexpr inline auto Check_Mainwindow::qt_create_metaobjectdata<qt_
         QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_historyBtn_clicked'
         QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onShowAllProductsChanged'
-        QtMocHelpers::SlotData<void(Qt::CheckState)>(13, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 14, 15 },
-        }}),
-        // Slot 'onAIAnalysisClicked'
-        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -174,8 +164,6 @@ void Check_Mainwindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 6: _t->backbtnclicked(); break;
         case 7: _t->addmemberclicked(); break;
         case 8: _t->on_historyBtn_clicked(); break;
-        case 9: _t->onShowAllProductsChanged((*reinterpret_cast<std::add_pointer_t<Qt::CheckState>>(_a[1]))); break;
-        case 10: _t->onAIAnalysisClicked(); break;
         default: ;
         }
     }
@@ -204,14 +192,14 @@ int Check_Mainwindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 9;
     }
     return _id;
 }
