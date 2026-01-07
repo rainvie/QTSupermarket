@@ -83,8 +83,7 @@ void SalesStatisticsDialog::setupUI()
     QPushButton *exportBtn = new QPushButton("导出CSV", this);
     aiAnalysisBtn = new QPushButton("🤖 AI分析", this);  // 添加表情符号使其更显眼
     aiAnalysisBtn->setStyleSheet("QPushButton {"
-                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                "                                    stop: 0 #FF5722, stop: 1 #E64A19);"  // 渐变橙红色背景
+                                "    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FF5722, stop: 1 #E64A19);"  // 渐变橙红色背景
                                 "    border: 2px solid #B71C1C;"      // 红色边框
                                 "    color: white;"                   // 白色文字
                                 "    padding: 12px 24px;"             // 更大的內边距
@@ -92,14 +91,14 @@ void SalesStatisticsDialog::setupUI()
                                 "    font-size: 15px;"               // 更大的字体
                                 "    font-weight: bold;"              // 加粗字体
                                 "    border-radius: 8px;"             // 更大的圆角
+                                "    min-width: 120px;"               // 设置最小宽度
+                                "    min-height: 45px;"               // 设置最小高度
                                 "}"
                                 "QPushButton:hover {"
-                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                "                                    stop: 0 #FF7043, stop: 1 #D84315);"  // 悬停时的渐变色
+                                "    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FF7043, stop: 1 #D84315);"  // 悬停时的渐变色
                                 "}"
                                 "QPushButton:pressed {"
-                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                "                                    stop: 0 #E64A19, stop: 1 #BF360C);"  // 按下时的渐变色
+                                "    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #E64A19, stop: 1 #BF360C);"  // 按下时的渐变色
                                 "    border: 2px solid #8E0E00;"      // 按下时更深的边框
                                 "    padding: 11px 23px;"             // 按下时稍微缩小内边距，产生按下效果
                                 "}");
