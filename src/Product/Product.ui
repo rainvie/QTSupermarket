@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Product</class>
+ <widget class="QMainWindow" name="Product">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>662</width>
+    <height>466</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableView" name="productTableView">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>661</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="categoryComboBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="searchLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>0</y>
+      <width>471</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Search_Product">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>0</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>商品搜索</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="Add_Product"/>
+   <addaction name="Delete_Product"/>
+   <addaction name="Put_Product"/>
+   <addaction name="Out_Product"/>
+   <addaction name="Modify_Reorder_Point"/>
+   <addaction name="Inventory_Report"/>
+   <addaction name="Sale_Action"/>
+   <addaction name="Show_Chart_Action"/>
+   <addaction name="importAction"/>
+   <addaction name="exportAction"/>
+   <addaction name="backToLogin"/>
+  </widget>
+  <action name="Add_Product">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Add.png</normaloff>:/icon/Product/Add.png</iconset>
+   </property>
+   <property name="text">
+    <string>添加商品</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="Delete_Product">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Delete.png</normaloff>:/icon/Product/Delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>删除商品</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="Put_Product">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Put.png</normaloff>:/icon/Product/Put.png</iconset>
+   </property>
+   <property name="text">
+    <string>商品入库</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="importAction">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/NumIn.png</normaloff>:/icon/Product/NumIn.png</iconset>
+   </property>
+   <property name="text">
+    <string>导入数据</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="exportAction">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/NumOut.png</normaloff>:/icon/Product/NumOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>导出数据</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="Out_Product">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Out.png</normaloff>:/icon/Product/Out.png</iconset>
+   </property>
+   <property name="text">
+    <string>商品出库</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="backToLogin">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Exit.png</normaloff>:/icon/Product/Exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="Sale_Action">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Statistics.png</normaloff>:/icon/Product/Statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>销售统计看板</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="Modify_Reorder_Point">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Statistics.png</normaloff>:/icon/Product/Statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>修改补货点</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="Inventory_Report">
+   <property name="icon">
+    <iconset resource="../../Icon.qrc">
+     <normaloff>:/icon/Product/Statistics.png</normaloff>:/icon/Product/Statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>库存报告</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="Show_Chart_Action">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icon/Product/Chart.png</normaloff>:/icon/Product/Chart.png</iconset>
+   </property>
+   <property name="text">
+    <string>库存图表</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../../Icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>
