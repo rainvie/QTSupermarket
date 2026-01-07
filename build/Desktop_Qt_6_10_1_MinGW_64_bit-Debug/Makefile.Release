@@ -16,7 +16,7 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DISABLE_DEPRECATED_BEFORE=0x060000 -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_CHARTS_LIB -DQT_OPENGLWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -Wno-error -O2 -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../../../QT_SuperMarket -I. -I../../include -I../../../../QT/6.10.1/mingw_64/include -I../../../../QT/6.10.1/mingw_64/include/QtCharts -I../../../../QT/6.10.1/mingw_64/include/QtOpenGLWidgets -I../../../../QT/6.10.1/mingw_64/include/QtWidgets -I../../../../QT/6.10.1/mingw_64/include/QtOpenGL -I../../../../QT/6.10.1/mingw_64/include/QtGui -I../../../../QT/6.10.1/mingw_64/include/QtSql -I../../../../QT/6.10.1/mingw_64/include/QtNetwork -I../../../../QT/6.10.1/mingw_64/include/QtCore -Irelease -I. -I/include -I../../../../QT/6.10.1/mingw_64/mkspecs/win32-g++ 
+INCPATH       = -I../../../QT_SuperMarket -I. -I../../include -I../../generated -I../../../../QT/6.10.1/mingw_64/include -I../../../../QT/6.10.1/mingw_64/include/QtCharts -I../../../../QT/6.10.1/mingw_64/include/QtOpenGLWidgets -I../../../../QT/6.10.1/mingw_64/include/QtWidgets -I../../../../QT/6.10.1/mingw_64/include/QtOpenGL -I../../../../QT/6.10.1/mingw_64/include/QtGui -I../../../../QT/6.10.1/mingw_64/include/QtSql -I../../../../QT/6.10.1/mingw_64/include/QtNetwork -I../../../../QT/6.10.1/mingw_64/include/QtCore -Irelease -Igenerated -I/include -I../../../../QT/6.10.1/mingw_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
 LIBS        =        D:\QT\6.10.1\mingw_64\lib\libQt6Charts.a D:\QT\6.10.1\mingw_64\lib\libQt6OpenGLWidgets.a D:\QT\6.10.1\mingw_64\lib\libQt6Widgets.a D:\QT\6.10.1\mingw_64\lib\libQt6OpenGL.a D:\QT\6.10.1\mingw_64\lib\libQt6Gui.a D:\QT\6.10.1\mingw_64\lib\libQt6Sql.a D:\QT\6.10.1\mingw_64\lib\libQt6Network.a D:\QT\6.10.1\mingw_64\lib\libQt6Core.a release\supermarket_resource_res.o -lmingw32 D:\QT\6.10.1\mingw_64\lib\libQt6EntryPoint.a -lshell32  
@@ -132,7 +132,7 @@ DESTDIR_TARGET = release\supermarket.exe
 first: all
 all: Makefile.Release  release/supermarket.exe
 
-release/supermarket.exe: D:/QT/6.10.1/mingw_64/lib/libQt6Charts.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGLWidgets.a D:/QT/6.10.1/mingw_64/lib/libQt6Widgets.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGL.a D:/QT/6.10.1/mingw_64/lib/libQt6Gui.a D:/QT/6.10.1/mingw_64/lib/libQt6Sql.a D:/QT/6.10.1/mingw_64/lib/libQt6Network.a D:/QT/6.10.1/mingw_64/lib/libQt6Core.a D:/QT/6.10.1/mingw_64/lib/libQt6EntryPoint.a ui_Check_Mainwindow.h ui_LogInDialog.h ui_Product.h ui_registerdialog.h ui_memberregisterdialog.h ui_saleshistorydialog.h $(OBJECTS) release/supermarket_resource_res.o
+release/supermarket.exe: D:/QT/6.10.1/mingw_64/lib/libQt6Charts.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGLWidgets.a D:/QT/6.10.1/mingw_64/lib/libQt6Widgets.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGL.a D:/QT/6.10.1/mingw_64/lib/libQt6Gui.a D:/QT/6.10.1/mingw_64/lib/libQt6Sql.a D:/QT/6.10.1/mingw_64/lib/libQt6Network.a D:/QT/6.10.1/mingw_64/lib/libQt6Core.a D:/QT/6.10.1/mingw_64/lib/libQt6EntryPoint.a generated/ui_Check_Mainwindow.h generated/ui_LogInDialog.h generated/ui_Product.h generated/ui_registerdialog.h generated/ui_memberregisterdialog.h generated/ui_saleshistorydialog.h $(OBJECTS) release/supermarket_resource_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @release\object_script.supermarket.Release $(LIBS)
 
 release/supermarket_resource_res.o: supermarket_resource.rc
@@ -477,9 +477,11 @@ release/moc_Check_Mainwindow.cpp: ../../include/Check/Check_Mainwindow.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialogButtonBox \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QSplitter \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
+		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
+		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Check\Check_Mainwindow.h -o release\moc_Check_Mainwindow.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Check\Check_Mainwindow.h -o release\moc_Check_Mainwindow.cpp
 
 release/moc_LoginDialog.cpp: ../../include/LogIn/LoginDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -688,7 +690,7 @@ release/moc_LoginDialog.cpp: ../../include/LogIn/LoginDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QEvent \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\LoginDialog.h -o release\moc_LoginDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\LoginDialog.h -o release\moc_LoginDialog.cpp
 
 release/moc_dbmanager.cpp: ../../include/LogIn/dbmanager.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QObject \
@@ -842,7 +844,7 @@ release/moc_dbmanager.cpp: ../../include/LogIn/dbmanager.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QList \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\dbmanager.h -o release\moc_dbmanager.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\dbmanager.h -o release\moc_dbmanager.cpp
 
 release/moc_AddProductDialog.cpp: ../../include/Product/AddProductDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -1078,7 +1080,7 @@ release/moc_AddProductDialog.cpp: ../../include/Product/AddProductDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\AddProductDialog.h -o release\moc_AddProductDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\AddProductDialog.h -o release\moc_AddProductDialog.cpp
 
 release/moc_SalesStatisticsDialog.cpp: ../../include/Product/SalesStatisticsDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -1345,7 +1347,7 @@ release/moc_SalesStatisticsDialog.cpp: ../../include/Product/SalesStatisticsDial
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QIODevice \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\SalesStatisticsDialog.h -o release\moc_SalesStatisticsDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\SalesStatisticsDialog.h -o release\moc_SalesStatisticsDialog.cpp
 
 release/moc_StockDialog.cpp: ../../include/Product/StockDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -1584,7 +1586,7 @@ release/moc_StockDialog.cpp: ../../include/Product/StockDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\StockDialog.h -o release\moc_StockDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\StockDialog.h -o release\moc_StockDialog.cpp
 
 release/moc_Product.cpp: ../../include/Product/Product.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QMainWindow \
@@ -1890,7 +1892,7 @@ release/moc_Product.cpp: ../../include/Product/Product.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qdialog.h \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\Product.h -o release\moc_Product.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\Product\Product.h -o release\moc_Product.cpp
 
 release/moc_registerdialog.cpp: ../../include/LogIn/registerdialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -2116,7 +2118,7 @@ release/moc_registerdialog.cpp: ../../include/LogIn/registerdialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\registerdialog.h -o release\moc_registerdialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\registerdialog.h -o release\moc_registerdialog.cpp
 
 release/moc_memberregisterdialog.cpp: ../../include/LogIn/memberregisterdialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -2323,7 +2325,7 @@ release/moc_memberregisterdialog.cpp: ../../include/LogIn/memberregisterdialog.h
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\memberregisterdialog.h -o release\moc_memberregisterdialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\memberregisterdialog.h -o release\moc_memberregisterdialog.cpp
 
 release/moc_saleshistorydialog.cpp: ../../include/LogIn/saleshistorydialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -2571,38 +2573,38 @@ release/moc_saleshistorydialog.cpp: ../../include/LogIn/saleshistorydialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qgroupbox.h \
 		release/moc_predefs.h \
 		../../../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\saleshistorydialog.h -o release\moc_saleshistorydialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/GitFile/QT_SuperMarket/generated -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\include\LogIn\saleshistorydialog.h -o release\moc_saleshistorydialog.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_Check_Mainwindow.h ui_LogInDialog.h ui_Product.h ui_registerdialog.h ui_memberregisterdialog.h ui_saleshistorydialog.h
+compiler_uic_make_all: generated/ui_Check_Mainwindow.h generated/ui_LogInDialog.h generated/ui_Product.h generated/ui_registerdialog.h generated/ui_memberregisterdialog.h generated/ui_saleshistorydialog.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_Check_Mainwindow.h ui_LogInDialog.h ui_Product.h ui_registerdialog.h ui_memberregisterdialog.h ui_saleshistorydialog.h
-ui_Check_Mainwindow.h: ../../src/Check/Check_Mainwindow.ui \
+	-$(DEL_FILE) generated\ui_Check_Mainwindow.h generated\ui_LogInDialog.h generated\ui_Product.h generated\ui_registerdialog.h generated\ui_memberregisterdialog.h generated\ui_saleshistorydialog.h
+generated/ui_Check_Mainwindow.h: ../../src/Check/Check_Mainwindow.ui \
 		../../../../QT/6.10.1/mingw_64/bin/uic.exe
-	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\Check\Check_Mainwindow.ui -o ui_Check_Mainwindow.h
+	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\Check\Check_Mainwindow.ui -o generated\ui_Check_Mainwindow.h
 
-ui_LogInDialog.h: ../../src/LogIn/LogInDialog.ui \
+generated/ui_LogInDialog.h: ../../src/LogIn/LogInDialog.ui \
 		../../../../QT/6.10.1/mingw_64/bin/uic.exe
-	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\LogInDialog.ui -o ui_LogInDialog.h
+	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\LogInDialog.ui -o generated\ui_LogInDialog.h
 
-ui_Product.h: ../../src/Product/Product.ui \
+generated/ui_Product.h: ../../src/Product/Product.ui \
 		../../../../QT/6.10.1/mingw_64/bin/uic.exe
-	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\Product\Product.ui -o ui_Product.h
+	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\Product\Product.ui -o generated\ui_Product.h
 
-ui_registerdialog.h: ../../src/LogIn/registerdialog.ui \
+generated/ui_registerdialog.h: ../../src/LogIn/registerdialog.ui \
 		../../../../QT/6.10.1/mingw_64/bin/uic.exe
-	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\registerdialog.ui -o ui_registerdialog.h
+	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\registerdialog.ui -o generated\ui_registerdialog.h
 
-ui_memberregisterdialog.h: ../../src/LogIn/memberregisterdialog.ui \
+generated/ui_memberregisterdialog.h: ../../src/LogIn/memberregisterdialog.ui \
 		../../../../QT/6.10.1/mingw_64/bin/uic.exe
-	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\memberregisterdialog.ui -o ui_memberregisterdialog.h
+	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\memberregisterdialog.ui -o generated\ui_memberregisterdialog.h
 
-ui_saleshistorydialog.h: ../../src/LogIn/saleshistorydialog.ui \
+generated/ui_saleshistorydialog.h: ../../src/LogIn/saleshistorydialog.ui \
 		../../../../QT/6.10.1/mingw_64/bin/uic.exe
-	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\saleshistorydialog.ui -o ui_saleshistorydialog.h
+	D:\QT\6.10.1\mingw_64\bin\uic.exe ..\..\src\LogIn\saleshistorydialog.ui -o generated\ui_saleshistorydialog.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -2895,7 +2897,9 @@ release/Check_Mainwindow.o: ../../src/Check/Check_Mainwindow.cpp ../../include/C
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialogButtonBox \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QSplitter \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
-		../../ui_Check_Mainwindow.h \
+		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
+		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
+		../../generated/ui_Check_Mainwindow.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
@@ -2921,8 +2925,6 @@ release/Check_Mainwindow.o: ../../src/Check/Check_Mainwindow.cpp ../../include/C
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDateEdit \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
-		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
-		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
 		../../include/Style/StyleManager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Check_Mainwindow.o ..\..\src\Check\Check_Mainwindow.cpp
 
@@ -3131,7 +3133,7 @@ release/LoginDialog.o: ../../src/LogIn/LoginDialog.cpp ../../include/LogIn/Login
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QString \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QEvent \
-		../../ui_LoginDialog.h \
+		../../generated/ui_LoginDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
 		../../../../../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
@@ -4357,6 +4359,8 @@ release/main.o: ../../src/main.cpp ../../include/LogIn/LoginDialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialogButtonBox \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QSplitter \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
+		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
+		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
 		../../src/Style/StyleManager.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h
@@ -4817,7 +4821,7 @@ release/Product.o: ../../src/Product/Product.cpp ../../include/Product/Product.h
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qtimer.h \
-		../../ui_Product.h \
+		../../generated/ui_Product.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtGui/QAction \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
@@ -5117,7 +5121,7 @@ release/registerdialog.o: ../../src/LogIn/registerdialog.cpp ../../include/LogIn
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QDateTime \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
-		../../ui_registerdialog.h \
+		../../generated/ui_registerdialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
@@ -5368,7 +5372,7 @@ release/memberregisterdialog.o: ../../src/LogIn/memberregisterdialog.cpp ../../i
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QDate \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
-		../../ui_memberregisterdialog.h \
+		../../generated/ui_memberregisterdialog.h \
 		../../../../../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
 		../../../../../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \

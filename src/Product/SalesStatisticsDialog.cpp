@@ -88,7 +88,7 @@ void SalesStatisticsDialog::setupUI()
                                 "    color: white;"                   // 白色文字
                                 "    padding: 12px 24px;"             // 更大的內边距
                                 "    text-align: center;"             // 文字居中
-                                "    font-size: 15px;"               // 更大的字体
+                                "    font-size: 18px;"               // 更大的字体
                                 "    font-weight: bold;"              // 加粗字体
                                 "    border-radius: 8px;"             // 更大的圆角
                                 "    min-width: 120px;"               // 设置最小宽度

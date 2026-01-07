@@ -691,7 +691,8 @@ bool DBManager::addSale(int cashierId, double total, double payment,
         }
 
         // 2. 添加销售明细
-        for (const auto& item : items) {
+        for (auto it = items.begin(); it != items.end(); ++it) {
+            const auto& item = *it;
             int productId = item["product_id"].toInt();
             int quantity = item["quantity"].toInt();
             double price = item["price"].toDouble();
