@@ -42,6 +42,7 @@ private:
     void setupUI();
     void performAIAnalysis();  // 执行AI分析
     void setAPIKey(const QString &key);  // 设置API密钥
+    QString convertMarkdownToHTML(const QString &markdown);  // 转换Markdown到HTML
 };
 
 #endif // SALESSTATISTICSDIALOG_H

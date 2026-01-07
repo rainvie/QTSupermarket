@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../include/Product/SalesStatisticsDialog.h"
+#include <QtNetwork/QSslError>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -89,6 +90,18 @@ void SalesStatisticsDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         default: ;
         }
     }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 3:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QNetworkReply* >(); break;
+            }
+            break;
+        }
+    }
 }
 
 const QMetaObject *SalesStatisticsDialog::metaObject() const
@@ -116,7 +129,7 @@ int SalesStatisticsDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 4)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 4;
     }
     return _id;

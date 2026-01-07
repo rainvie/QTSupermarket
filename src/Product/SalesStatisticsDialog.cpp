@@ -11,9 +11,11 @@
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QTextEdit>
+#include <QTextBrowser>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QRegularExpression>
 #include <QUrl>
 
 SalesStatisticsDialog::SalesStatisticsDialog(QWidget *parent) : QDialog(parent)
@@ -415,14 +417,18 @@ void SalesStatisticsDialog::onAIReplyFinished(QNetworkReply* reply)
 
                 QVBoxLayout *layout = new QVBoxLayout(resultDialog);
 
-                QTextEdit *textEdit = new QTextEdit(resultDialog);
-                textEdit->setPlainText(content);
-                textEdit->setReadOnly(true);
+                // 将Markdown内容转换为HTML
+                QString htmlContent = convertMarkdownToHTML(content);
+
+                // 使用QTextBrowser显示富文本内容
+                QTextBrowser *textBrowser = new QTextBrowser(resultDialog);
+                textBrowser->setHtml(htmlContent);
+                textBrowser->setOpenExternalLinks(true); // 允许打开外部链接
 
                 QPushButton *closeBtn = new QPushButton("关闭", resultDialog);
                 connect(closeBtn, &QPushButton::clicked, resultDialog, &QDialog::accept);
 
-                layout->addWidget(textEdit);
+                layout->addWidget(textBrowser);
                 layout->addWidget(closeBtn);
 
                 resultDialog->show();
@@ -446,6 +452,78 @@ void SalesStatisticsDialog::onAIReplyFinished(QNetworkReply* reply)
     }
 
     reply->deleteLater();
+}
+
+// 简单的Markdown到HTML转换函数
+QString SalesStatisticsDialog::convertMarkdownToHTML(const QString &markdown)
+{
+    QString html = markdown;
+
+    // 转换标题 (# 标题)
+    html.replace(QRegularExpression("^#\\s+(.+)$", QRegularExpression::MultilineOption), "<h1>\\1</h1>");
+    html.replace(QRegularExpression("^##\\s+(.+)$", QRegularExpression::MultilineOption), "<h2>\\1</h2>");
+    html.replace(QRegularExpression("^###\\s+(.+)$", QRegularExpression::MultilineOption), "<h3>\\1</h3>");
+
+    // 转换粗体 (**text** 或 __text__)
+    html.replace(QRegularExpression("\\*\\*(.+?)\\*\\*"), "<strong>\\1</strong>");
+    html.replace(QRegularExpression("__(.+?)__"), "<strong>\\1</strong>");
+
+    // 转换斜体 (*text* 或 _text_)
+    html.replace(QRegularExpression("\\*(.+?)\\*"), "<em>\\1</em>");
+    html.replace(QRegularExpression("_(.+?)_"), "<em>\\1</em>");
+
+    // 重新处理粗体，因为上面的斜体处理可能影响了粗体
+    html.replace(QRegularExpression("\\*\\*(.+?)\\*\\*"), "<strong>\\1</strong>");
+    html.replace(QRegularExpression("__(.+?)__"), "<strong>\\1</strong>");
+
+    // 转换行内代码 (`code`)
+    html.replace(QRegularExpression("`(.+?)`"), "<code style='background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px;'>\\1</code>");
+
+    // 转换分隔线 (---)
+    html.replace(QRegularExpression("^---$", QRegularExpression::MultilineOption), "<hr>");
+
+    // 处理列表 - 先将列表项标记出来
+    QStringList lines = html.split("\n");
+    QStringList processedLines;
+    bool inList = false;
+
+    for (const QString &line : lines) {
+        if (line.startsWith("- ") || line.startsWith("* ")) {
+            if (!inList) {
+                processedLines << "<ul>";
+                inList = true;
+            }
+            QString listItem = line.mid(2); // 移除 "- " 或 "* "
+            processedLines << "<li>" + listItem + "</li>";
+        } else {
+            if (inList) {
+                processedLines << "</ul>";
+                inList = false;
+            }
+            processedLines << line;
+        }
+    }
+
+    if (inList) {
+        processedLines << "</ul>";
+    }
+
+    html = processedLines.join("\n");
+
+    // 转换换行（保留段落结构）
+    html.replace(QRegularExpression("\n\n"), "</p><p>");
+    html.replace("\n", "<br>");
+
+    // 包装在段落标签中
+    html = "<p>" + html + "</p>";
+
+    // 替换多余的段落标签
+    html.replace("<p></p>", "");
+
+    // 添加基本样式
+    html = "<div style='font-family: \"Microsoft YaHei\", Arial, sans-serif; line-height: 1.6; padding: 10px;'>" + html + "</div>";
+
+    return html;
 }
 
 void SalesStatisticsDialog::setAPIKey(const QString &key)
