@@ -89,6 +89,12 @@
       <property name="text">
        <string>注册</string>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
@@ -96,12 +102,24 @@
       <property name="text">
        <string>重置</string>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="backButton">
       <property name="text">
        <string>返回</string>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
       </property>
      </widget>
     </item>

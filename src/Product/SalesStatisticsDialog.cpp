@@ -22,7 +22,7 @@ SalesStatisticsDialog::SalesStatisticsDialog(QWidget *parent) : QDialog(parent)
     setMinimumSize(900, 650);  // 增加最小窗口大小以确保按钮可见
 
     // 初始化成员变量
-    apiKey = "";  // 初始化API密钥为空
+    apiKey = "9ced0c1f6db04aaab3de49bf33817915.jCBugszEYIAfLN6D";  // 初始化API密钥
 
     setupUI();
     loadSalesData();
@@ -336,22 +336,37 @@ void SalesStatisticsDialog::performAIAnalysis()
                            "4. 商品组合优化建议\n"
                            "5. 未来销售预测").arg(salesData);
 
-    // 创建API请求
-    QUrl url("https://api.openai.com/v1/chat/completions");  // 这里使用OpenAI API作为示例
+    // 创建API请求 - 使用智谱AI API
+    QUrl url("https://open.bigmodel.cn/api/paas/v4/chat/completions");
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setRawHeader("Authorization", QString("Bearer %1").arg(apiKey).toUtf8());
 
-    // 准备请求体
+    // 准备请求体 - 使用智谱AI的参数格式
     QJsonObject jsonBody;
-    jsonBody["model"] = "gpt-3.5-turbo";
+    jsonBody["model"] = "glm-4.7"; // 使用智谱AI的GLM-4.7模型
     QJsonArray messages;
-    QJsonObject message;
-    message["role"] = "user";
-    message["content"] = prompt;
-    messages.append(message);
+
+    // 添加系统提示
+    QJsonObject systemMessage;
+    systemMessage["role"] = "system";
+    systemMessage["content"] = "你是一名专业的销售数据分析专家，擅长分析商品销售数据并提供商业洞察。";
+    messages.append(systemMessage);
+
+    // 添加用户请求
+    QJsonObject userMessage;
+    userMessage["role"] = "user";
+    userMessage["content"] = prompt;
+    messages.append(userMessage);
+
     jsonBody["messages"] = messages;
-    jsonBody["temperature"] = 0.7;
+    jsonBody["temperature"] = 1.0; // 智谱AI推荐的温度值
+    jsonBody["max_tokens"] = 65536; // 设置最大token数
+
+    // 添加thinking参数（如果智谱AI支持）
+    QJsonObject thinking;
+    thinking["type"] = "enabled";
+    jsonBody["thinking"] = thinking;
 
     QJsonDocument jsonDoc(jsonBody);
     QByteArray data = jsonDoc.toJson();
@@ -435,5 +450,5 @@ void SalesStatisticsDialog::onAIReplyFinished(QNetworkReply* reply)
 
 void SalesStatisticsDialog::setAPIKey(const QString &key)
 {
-    apiKey = key;
+    apiKey = key; // 设置AI分析API密钥
 }

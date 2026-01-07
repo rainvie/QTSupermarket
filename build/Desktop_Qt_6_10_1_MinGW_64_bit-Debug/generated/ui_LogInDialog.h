@@ -117,13 +117,13 @@ public:
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
         Login = new QPushButton(horizontalLayoutWidget);
         Login->setObjectName("Login");
-        Login->setMinimumSize(QSize(0, 35));
+        Login->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_3->addWidget(Login);
 
         Register = new QPushButton(horizontalLayoutWidget);
         Register->setObjectName("Register");
-        Register->setMinimumSize(QSize(0, 35));
+        Register->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_3->addWidget(Register);
 

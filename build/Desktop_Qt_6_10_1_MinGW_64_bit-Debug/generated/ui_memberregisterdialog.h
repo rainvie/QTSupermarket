@@ -107,16 +107,19 @@ public:
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
         registerButton = new QPushButton(horizontalLayoutWidget_4);
         registerButton->setObjectName("registerButton");
+        registerButton->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_4->addWidget(registerButton);
 
         resetButton = new QPushButton(horizontalLayoutWidget_4);
         resetButton->setObjectName("resetButton");
+        resetButton->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_4->addWidget(resetButton);
 
         backButton = new QPushButton(horizontalLayoutWidget_4);
         backButton->setObjectName("backButton");
+        backButton->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_4->addWidget(backButton);
 

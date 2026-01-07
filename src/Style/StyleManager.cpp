@@ -102,9 +102,9 @@ QString StyleManager::getButtonStyle() const
             color: white;
             border: none;
             border-radius: 15px;
-            padding: 10px 20px;
+            padding: 8px 16px;
             font-weight: bold;
-            min-height: 35px;
+            min-height: 30px;
             font-size: 11pt;
         }
 

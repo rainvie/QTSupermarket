@@ -174,11 +174,11 @@ void Check_Mainwindow::setupUI(){
 
             // 连接AI分析按钮点击信号
             connect(m_aiAnalysisBtn, &QPushButton::clicked, this, [this]() {
-                // 显示一个简单的信息对话框，说明AI功能
+                // 显示一个信息对话框 explaining where to find the AI analysis
                 QMessageBox::information(this, "AI分析",
-                                       "AI分析功能正在开发中...\n"
-                                       "此功能将分析销售数据并提供商业洞察。\n"
-                                       "API密钥可在设置中配置。");
+                                       "AI分析功能已实现！\n"
+                                       "请在主界面的“销售统计看板”功能中使用AI分析。\n"
+                                       "该功能会分析销售数据并提供商业洞察。");
             });
         }
     }

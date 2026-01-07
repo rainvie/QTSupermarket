@@ -244,11 +244,13 @@ public:
         horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
         registerButton = new QPushButton(horizontalLayoutWidget_3);
         registerButton->setObjectName("registerButton");
+        registerButton->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_6->addWidget(registerButton);
 
         backButton = new QPushButton(horizontalLayoutWidget_3);
         backButton->setObjectName("backButton");
+        backButton->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_6->addWidget(backButton);
 
