@@ -89,6 +89,100 @@ void Check_Mainwindow::setupUI(){
             categoryLayout->addWidget(btn);
         }
     }
+
+    // 添加显示所有商品的复选框和AI分析按钮
+    if (productGroupBox) {  // 使用已声明的productGroupBox变量
+        QVBoxLayout* productLayout = qobject_cast<QVBoxLayout*>(productGroupBox->layout());
+        if (productLayout) {
+            // 创建一个水平布局来放置复选框和AI按钮
+            QHBoxLayout* topControlsLayout = new QHBoxLayout();
+
+            // 创建复选框
+            m_showAllProductsCheckBox = new QCheckBox("显示所有商品", productGroupBox);
+            m_showAllProductsCheckBox->setChecked(true);  // 默认选中，显示所有商品
+            m_showAllProductsCheckBox->setStyleSheet("QCheckBox {"
+                                                   "    color: #1565C0;"      // 深蓝色文字
+                                                   "    font-size: 12px;"     // 字体大小
+                                                   "    font-weight: bold;"   // 加粗
+                                                   "    spacing: 5px;"        // 间距
+                                                   "}"
+                                                   "QCheckBox::indicator {"
+                                                   "    width: 16px;"         // 指示器宽度
+                                                   "    height: 16px;"        // 指示器高度
+                                                   "}"
+                                                   "QCheckBox::indicator:unchecked {"
+                                                   "    border: 2px solid #1565C0;"  // 未选中时边框
+                                                   "    background: white;"          // 未选中时背景
+                                                   "}"
+                                                   "QCheckBox::indicator:checked {"
+                                                   "    border: 2px solid #1565C0;"  // 选中时边框
+                                                   "    background: #1565C0;"        // 选中时背景
+                                                   "}");
+
+            // 创建AI分析按钮
+            m_aiAnalysisBtn = new QPushButton("🤖 AI分析", productGroupBox);
+            m_aiAnalysisBtn->setStyleSheet("QPushButton {"
+                                         "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                         "                                    stop: 0 #FF5722, stop: 1 #E64A19);"  // 渐变橙红色背景
+                                         "    border: 2px solid #B71C1C;"      // 红色边框
+                                         "    color: white;"                   // 白色文字
+                                         "    padding: 8px 12px;"              // 内边距
+                                         "    text-align: center;"             // 文字居中
+                                         "    font-size: 12px;"                // 字体大小
+                                         "    font-weight: bold;"              // 加粗字体
+                                         "    border-radius: 6px;"             // 圆角
+                                         "}"
+                                         "QPushButton:hover {"
+                                         "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                         "                                    stop: 0 #FF7043, stop: 1 #D84315);"  // 悬停时的渐变色
+                                         "}"
+                                         "QPushButton:pressed {"
+                                         "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                         "                                    stop: 0 #E64A19, stop: 1 #BF360C);"  // 按下时的渐变色
+                                         "    border: 2px solid #8E0E00;"      // 按下时更深的边框
+                                         "    padding: 7px 11px;"              // 按下时稍微缩小内边距，产生按下效果
+                                         "}");
+            m_aiAnalysisBtn->setMinimumSize(80, 35);  // 设置最小尺寸
+
+            // 将复选框和AI按钮添加到水平布局
+            topControlsLayout->addWidget(m_showAllProductsCheckBox);
+            topControlsLayout->addStretch();  // 添加伸缩空间
+            topControlsLayout->addWidget(m_aiAnalysisBtn);  // 将AI按钮放在右侧
+
+            // 将这个布局插入到分类按钮和商品列表之间
+            productLayout->insertLayout(0, topControlsLayout);  // 插入到索引0位置
+
+            // 连接复选框状态改变信号
+            connect(m_showAllProductsCheckBox, &QCheckBox::checkStateChanged,
+                   this, [this](Qt::CheckState state) {
+                       // 根据复选框状态决定是否显示所有商品
+                       // 这里可以实现商品筛选逻辑
+                       // 如果选中（state == Qt::Checked），显示所有商品
+                       // 如果未选中（state == Qt::Unchecked），可以实现其他筛选逻辑
+                       // 比如只显示有库存的商品等
+
+                       // 重新加载商品列表，根据复选框状态进行筛选
+                       if (state == Qt::Checked) {
+                           // 显示所有商品，重新加载当前分类的商品
+                           updateProduct();  // 重新调用更新商品函数
+                       } else {
+                           // 可以实现其他筛选逻辑，比如只显示有库存的商品
+                           // 这里暂时也显示所有商品，您可以根据需要修改筛选逻辑
+                           updateProduct();  // 重新调用更新商品函数
+                       }
+                   });
+
+            // 连接AI分析按钮点击信号
+            connect(m_aiAnalysisBtn, &QPushButton::clicked, this, [this]() {
+                // 显示一个简单的信息对话框，说明AI功能
+                QMessageBox::information(this, "AI分析",
+                                       "AI分析功能正在开发中...\n"
+                                       "此功能将分析销售数据并提供商业洞察。\n"
+                                       "API密钥可在设置中配置。");
+            });
+        }
+    }
+
     ui->productlistWidget->setDragDropMode(QAbstractItemView::NoDragDrop); //           禁用商品区拖放
     ui->productlistWidget->setSelectionMode(QAbstractItemView::SingleSelection); //     限制商品区单选
 

@@ -203,7 +203,7 @@
   </action>
   <action name="Show_Chart_Action">
    <property name="icon">
-    <iconset resource="../../Icon.qrc">
+    <iconset>
      <normaloff>:/icon/Product/Chart.png</normaloff>:/icon/Product/Chart.png</iconset>
    </property>
    <property name="text">

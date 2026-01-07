@@ -13,13 +13,13 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DISABLE_DEPRECATED_BEFORE=0x060000 -DQT_CHARTS_LIB -DQT_OPENGLWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
+DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DISABLE_DEPRECATED_BEFORE=0x060000 -DQT_CHARTS_LIB -DQT_OPENGLWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -Wno-error -g -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I. -Iinclude -I../../QT/6.10.1/mingw_64/include -I../../QT/6.10.1/mingw_64/include/QtCharts -I../../QT/6.10.1/mingw_64/include/QtOpenGLWidgets -I../../QT/6.10.1/mingw_64/include/QtWidgets -I../../QT/6.10.1/mingw_64/include/QtOpenGL -I../../QT/6.10.1/mingw_64/include/QtGui -I../../QT/6.10.1/mingw_64/include/QtSql -I../../QT/6.10.1/mingw_64/include/QtCore -Idebug -I. -I/include -I../../QT/6.10.1/mingw_64/mkspecs/win32-g++ 
+INCPATH       = -I. -Iinclude -I../../QT/6.10.1/mingw_64/include -I../../QT/6.10.1/mingw_64/include/QtCharts -I../../QT/6.10.1/mingw_64/include/QtOpenGLWidgets -I../../QT/6.10.1/mingw_64/include/QtWidgets -I../../QT/6.10.1/mingw_64/include/QtOpenGL -I../../QT/6.10.1/mingw_64/include/QtGui -I../../QT/6.10.1/mingw_64/include/QtSql -I../../QT/6.10.1/mingw_64/include/QtNetwork -I../../QT/6.10.1/mingw_64/include/QtCore -Idebug -I. -I/include -I../../QT/6.10.1/mingw_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        D:\QT\6.10.1\mingw_64\lib\libQt6Charts.a D:\QT\6.10.1\mingw_64\lib\libQt6OpenGLWidgets.a D:\QT\6.10.1\mingw_64\lib\libQt6Widgets.a D:\QT\6.10.1\mingw_64\lib\libQt6OpenGL.a D:\QT\6.10.1\mingw_64\lib\libQt6Gui.a D:\QT\6.10.1\mingw_64\lib\libQt6Sql.a D:\QT\6.10.1\mingw_64\lib\libQt6Core.a debug\supermarket_resource_res.o -lmingw32 D:\QT\6.10.1\mingw_64\lib\libQt6EntryPoint.a -lshell32  
+LIBS        =        D:\QT\6.10.1\mingw_64\lib\libQt6Charts.a D:\QT\6.10.1\mingw_64\lib\libQt6OpenGLWidgets.a D:\QT\6.10.1\mingw_64\lib\libQt6Widgets.a D:\QT\6.10.1\mingw_64\lib\libQt6OpenGL.a D:\QT\6.10.1\mingw_64\lib\libQt6Gui.a D:\QT\6.10.1\mingw_64\lib\libQt6Sql.a D:\QT\6.10.1\mingw_64\lib\libQt6Network.a D:\QT\6.10.1\mingw_64\lib\libQt6Core.a debug\supermarket_resource_res.o -lmingw32 D:\QT\6.10.1\mingw_64\lib\libQt6EntryPoint.a -lshell32  
 QMAKE         = D:\QT\6.10.1\mingw_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -132,7 +132,7 @@ DESTDIR_TARGET = debug\supermarket.exe
 first: all
 all: Makefile.Debug  debug/supermarket.exe
 
-debug/supermarket.exe: D:/QT/6.10.1/mingw_64/lib/libQt6Charts.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGLWidgets.a D:/QT/6.10.1/mingw_64/lib/libQt6Widgets.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGL.a D:/QT/6.10.1/mingw_64/lib/libQt6Gui.a D:/QT/6.10.1/mingw_64/lib/libQt6Sql.a D:/QT/6.10.1/mingw_64/lib/libQt6Core.a D:/QT/6.10.1/mingw_64/lib/libQt6EntryPoint.a ui_Check_Mainwindow.h ui_LogInDialog.h ui_Product.h ui_registerdialog.h ui_memberregisterdialog.h ui_saleshistorydialog.h $(OBJECTS) debug/supermarket_resource_res.o
+debug/supermarket.exe: D:/QT/6.10.1/mingw_64/lib/libQt6Charts.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGLWidgets.a D:/QT/6.10.1/mingw_64/lib/libQt6Widgets.a D:/QT/6.10.1/mingw_64/lib/libQt6OpenGL.a D:/QT/6.10.1/mingw_64/lib/libQt6Gui.a D:/QT/6.10.1/mingw_64/lib/libQt6Sql.a D:/QT/6.10.1/mingw_64/lib/libQt6Network.a D:/QT/6.10.1/mingw_64/lib/libQt6Core.a D:/QT/6.10.1/mingw_64/lib/libQt6EntryPoint.a ui_Check_Mainwindow.h ui_LogInDialog.h ui_Product.h ui_registerdialog.h ui_memberregisterdialog.h ui_saleshistorydialog.h $(OBJECTS) debug/supermarket_resource_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @debug\object_script.supermarket.Debug $(LIBS)
 
 debug/supermarket_resource_res.o: supermarket_resource.rc
@@ -144,7 +144,7 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) supermarket.zip $(SOURCES) $(DIST) d:\GitFile\QT_SuperMarket\supermarket.pro ..\..\QT\6.10.1\mingw_64\mkspecs\features\spec_pre.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\device_config.prf ..\..\QT\6.10.1\mingw_64\mkspecs\common\sanitize.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\gcc-base.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\g++-base.conf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf ..\..\QT\6.10.1\mingw_64\mkspecs\common\windows-vulkan.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\g++-win32.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\windows-desktop.conf ..\..\QT\6.10.1\mingw_64\mkspecs\qconfig.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_freetype.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_libpng.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_openxr_loader.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_charts.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_chartsqml.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_chartsqml_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_core.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_core_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_dbus.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_designer.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_examples_asset_downloader_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_ffmpegmediapluginimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_gui.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_help.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_help_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsplatform.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsplatform_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssettings.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssynchronizer.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssynchronizer_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_linguist.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediaquick_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediatestlibprivate_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_network.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_network_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_opengl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_png_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversions_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qdoccatchgenerators_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qml.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlformat_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmeta.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmeta_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlnetwork.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlnetwork_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3d.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3d_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3deffects.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dglslparser_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dparticles.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dparticles_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dspatialaudio_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dutils.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dutils_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dxr.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dxr_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickeffects.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickshapesdesignhelpers_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimeline.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimeline_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimage.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimage_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimagegenerator_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimagehelpers.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimagehelpers_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_shadertools.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_shadertools_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_spatialaudio.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_spatialaudio_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_sql.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_svg.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_testinternals_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_testlib.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_tools_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_uitools.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_widgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_xml.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\features\qt_functions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\qt_config.prf ..\..\QT\6.10.1\mingw_64\mkspecs\win32-g++\qmake.conf ..\..\QT\6.10.1\mingw_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\QT\6.10.1\mingw_64\mkspecs\features\exclusive_builds.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\toolchain.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\default_pre.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\default_pre.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\resolve_config.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\exclusive_builds_post.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\default_post.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\build_pass.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\precompile_header.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\warn_on.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\permissions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\qt.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\resources_functions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\resources.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\moc.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\opengl.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\uic.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\qmake_use.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\file_copies.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\windows.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\testcase_targets.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\exceptions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\yacc.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\lex.prf supermarket.pro icon.qrc re1.qrc ..\..\QT\6.10.1\mingw_64\lib\Qt6Charts.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6OpenGLWidgets.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Widgets.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6OpenGL.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Gui.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Sql.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Core.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6EntryPoint.prl   icon.qrc re1.qrc ..\..\QT\6.10.1\mingw_64\mkspecs\features\data\dummy.cpp include\Check\Check_Mainwindow.h include\LogIn\LoginDialog.h include\LogIn\dbmanager.h include\Product\AddProductDialog.h include\Product\SalesStatisticsDialog.h include\Product\StockDialog.h include\Product\Product.h include\LogIn\registerdialog.h include\LogIn\memberregisterdialog.h include\LogIn\saleshistorydialog.h include\Style\StyleManager.h  src\Check\Check_Mainwindow.cpp src\LogIn\LoginDialog.cpp src\Product\AddProductDialog.cpp src\Product\SalesStatisticsDialog.cpp src\Product\StockDialog.cpp src\main.cpp src\LogIn\dbmanager.cpp src\Product\Product.cpp src\LogIn\registerdialog.cpp src\LogIn\memberregisterdialog.cpp src\LogIn\saleshistorydialog.cpp src\Style\StyleManager.cpp src\Check\Check_Mainwindow.ui src\LogIn\LogInDialog.ui src\Product\Product.ui src\LogIn\registerdialog.ui src\LogIn\memberregisterdialog.ui src\LogIn\saleshistorydialog.ui    
+	$(ZIP) supermarket.zip $(SOURCES) $(DIST) d:\GitFile\QT_SuperMarket\supermarket.pro ..\..\QT\6.10.1\mingw_64\mkspecs\features\spec_pre.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\device_config.prf ..\..\QT\6.10.1\mingw_64\mkspecs\common\sanitize.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\gcc-base.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\g++-base.conf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf ..\..\QT\6.10.1\mingw_64\mkspecs\common\windows-vulkan.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\g++-win32.conf ..\..\QT\6.10.1\mingw_64\mkspecs\common\windows-desktop.conf ..\..\QT\6.10.1\mingw_64\mkspecs\qconfig.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_freetype.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_libpng.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_ext_openxr_loader.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_charts.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_chartsqml.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_chartsqml_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_core.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_core_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_dbus.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_designer.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_examples_asset_downloader_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_ffmpegmediapluginimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_gui.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_help.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_help_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsplatform.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsplatform_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssettings.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssynchronizer.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labssynchronizer_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_linguist.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediaquick_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediatestlibprivate_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_network.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_network_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_opengl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_png_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversions_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qdoccatchgenerators_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qml.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlformat_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmeta.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmeta_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlnetwork.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlnetwork_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3d.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3d_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3deffects.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dglslparser_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dparticles.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dparticles_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dspatialaudio_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dutils.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dutils_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dxr.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick3dxr_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickeffects.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickshapesdesignhelpers_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimeline.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimeline_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimage.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimage_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimagegenerator_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimagehelpers.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickvectorimagehelpers_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_shadertools.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_shadertools_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_spatialaudio.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_spatialaudio_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_sql.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_svg.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_testinternals_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_testlib.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_tools_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_uitools.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_widgets.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_xml.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\QT\6.10.1\mingw_64\mkspecs\features\qt_functions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\qt_config.prf ..\..\QT\6.10.1\mingw_64\mkspecs\win32-g++\qmake.conf ..\..\QT\6.10.1\mingw_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\QT\6.10.1\mingw_64\mkspecs\features\exclusive_builds.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\toolchain.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\default_pre.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\default_pre.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\resolve_config.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\exclusive_builds_post.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\default_post.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\build_pass.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\precompile_header.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\warn_on.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\permissions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\qt.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\resources_functions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\resources.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\moc.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\opengl.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\uic.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\qmake_use.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\file_copies.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\win32\windows.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\testcase_targets.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\exceptions.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\yacc.prf ..\..\QT\6.10.1\mingw_64\mkspecs\features\lex.prf supermarket.pro icon.qrc re1.qrc ..\..\QT\6.10.1\mingw_64\lib\Qt6Charts.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6OpenGLWidgets.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Widgets.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6OpenGL.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Gui.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Sql.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Network.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6Core.prl ..\..\QT\6.10.1\mingw_64\lib\Qt6EntryPoint.prl   icon.qrc re1.qrc ..\..\QT\6.10.1\mingw_64\mkspecs\features\data\dummy.cpp include\Check\Check_Mainwindow.h include\LogIn\LoginDialog.h include\LogIn\dbmanager.h include\Product\AddProductDialog.h include\Product\SalesStatisticsDialog.h include\Product\StockDialog.h include\Product\Product.h include\LogIn\registerdialog.h include\LogIn\memberregisterdialog.h include\LogIn\saleshistorydialog.h include\Style\StyleManager.h  src\Check\Check_Mainwindow.cpp src\LogIn\LoginDialog.cpp src\Product\AddProductDialog.cpp src\Product\SalesStatisticsDialog.cpp src\Product\StockDialog.cpp src\main.cpp src\LogIn\dbmanager.cpp src\Product\Product.cpp src\LogIn\registerdialog.cpp src\LogIn\memberregisterdialog.cpp src\LogIn\saleshistorydialog.cpp src\Style\StyleManager.cpp src\Check\Check_Mainwindow.ui src\LogIn\LogInDialog.ui src\Product\Product.ui src\LogIn\registerdialog.ui src\LogIn\memberregisterdialog.ui src\LogIn\saleshistorydialog.ui    
 
 clean: compiler_clean 
 	-$(DEL_FILE) debug\Check_Mainwindow.o debug\LoginDialog.o debug\AddProductDialog.o debug\SalesStatisticsDialog.o debug\StockDialog.o debug\main.o debug\dbmanager.o debug\Product.o debug\registerdialog.o debug\memberregisterdialog.o debug\saleshistorydialog.o debug\StyleManager.o debug\qrc_icon.o debug\qrc_re1.o debug\moc_Check_Mainwindow.o debug\moc_LoginDialog.o debug\moc_dbmanager.o debug\moc_AddProductDialog.o debug\moc_SalesStatisticsDialog.o debug\moc_StockDialog.o debug\moc_Product.o debug\moc_registerdialog.o debug\moc_memberregisterdialog.o debug\moc_saleshistorydialog.o
@@ -475,9 +475,13 @@ debug/moc_Check_Mainwindow.cpp: include/Check/Check_Mainwindow.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QTimer \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimer.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialogButtonBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QSplitter \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Check\Check_Mainwindow.h -o debug\moc_Check_Mainwindow.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Check\Check_Mainwindow.h -o debug\moc_Check_Mainwindow.cpp
 
 debug/moc_LoginDialog.cpp: include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -686,7 +690,7 @@ debug/moc_LoginDialog.cpp: include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QEvent \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\LoginDialog.h -o debug\moc_LoginDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\LoginDialog.h -o debug\moc_LoginDialog.cpp
 
 debug/moc_dbmanager.cpp: include/LogIn/dbmanager.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QObject \
@@ -840,7 +844,7 @@ debug/moc_dbmanager.cpp: include/LogIn/dbmanager.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QList \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\dbmanager.h -o debug\moc_dbmanager.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\dbmanager.h -o debug\moc_dbmanager.cpp
 
 debug/moc_AddProductDialog.cpp: include/Product/AddProductDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -1076,7 +1080,7 @@ debug/moc_AddProductDialog.cpp: include/Product/AddProductDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\AddProductDialog.h -o debug\moc_AddProductDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\AddProductDialog.h -o debug\moc_AddProductDialog.cpp
 
 debug/moc_SalesStatisticsDialog.cpp: include/Product/SalesStatisticsDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -1310,9 +1314,40 @@ debug/moc_SalesStatisticsDialog.cpp: include/Product/SalesStatisticsDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qhttpheaders.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qmetaobject.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QSharedDataPointer \
+		../../QT/6.10.1/mingw_64/include/QtCore/QString \
+		../../QT/6.10.1/mingw_64/include/QtCore/QUrl \
+		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
+		../../QT/6.10.1/mingw_64/include/QtCore/q26numeric.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslerror.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qcryptographichash.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qssl.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QFlags \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QMetaType \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkRequest \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkReply \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QIODevice \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\SalesStatisticsDialog.h -o debug\moc_SalesStatisticsDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\SalesStatisticsDialog.h -o debug\moc_SalesStatisticsDialog.cpp
 
 debug/moc_StockDialog.cpp: include/Product/StockDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -1551,7 +1586,7 @@ debug/moc_StockDialog.cpp: include/Product/StockDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\StockDialog.h -o debug\moc_StockDialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\StockDialog.h -o debug\moc_StockDialog.cpp
 
 debug/moc_Product.cpp: include/Product/Product.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QMainWindow \
@@ -1857,7 +1892,7 @@ debug/moc_Product.cpp: include/Product/Product.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialog.h \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\Product.h -o debug\moc_Product.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\Product\Product.h -o debug\moc_Product.cpp
 
 debug/moc_registerdialog.cpp: include/LogIn/registerdialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -2083,7 +2118,7 @@ debug/moc_registerdialog.cpp: include/LogIn/registerdialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\registerdialog.h -o debug\moc_registerdialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\registerdialog.h -o debug\moc_registerdialog.cpp
 
 debug/moc_memberregisterdialog.cpp: include/LogIn/memberregisterdialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -2290,7 +2325,7 @@ debug/moc_memberregisterdialog.cpp: include/LogIn/memberregisterdialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\memberregisterdialog.h -o debug\moc_memberregisterdialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\memberregisterdialog.h -o debug\moc_memberregisterdialog.cpp
 
 debug/moc_saleshistorydialog.cpp: include/LogIn/saleshistorydialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
@@ -2538,7 +2573,7 @@ debug/moc_saleshistorydialog.cpp: include/LogIn/saleshistorydialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qgroupbox.h \
 		debug/moc_predefs.h \
 		../../QT/6.10.1/mingw_64/bin/moc.exe
-	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\saleshistorydialog.h -o debug\moc_saleshistorydialog.cpp
+	D:\QT\6.10.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/GitFile/QT_SuperMarket/debug/moc_predefs.h -ID:/QT/6.10.1/mingw_64/mkspecs/win32-g++ -ID:/GitFile/QT_SuperMarket -ID:/GitFile/QT_SuperMarket/include -ID:/QT/6.10.1/mingw_64/include -ID:/QT/6.10.1/mingw_64/include/QtCharts -ID:/QT/6.10.1/mingw_64/include/QtOpenGLWidgets -ID:/QT/6.10.1/mingw_64/include/QtWidgets -ID:/QT/6.10.1/mingw_64/include/QtOpenGL -ID:/QT/6.10.1/mingw_64/include/QtGui -ID:/QT/6.10.1/mingw_64/include/QtSql -ID:/QT/6.10.1/mingw_64/include/QtNetwork -ID:/QT/6.10.1/mingw_64/include/QtCore -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/mingw64/x86_64-w64-mingw32/include include\LogIn\saleshistorydialog.h -o debug\moc_saleshistorydialog.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -2860,7 +2895,29 @@ debug/Check_Mainwindow.o: src/Check/Check_Mainwindow.cpp include/Check/Check_Mai
 		../../QT/6.10.1/mingw_64/include/QtCore/QTimer \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimer.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialogButtonBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QSplitter \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
 		ui_Check_Mainwindow.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QGroupBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qgroupbox.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QListWidget \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QMenuBar \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qmenubar.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qmenu.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QSpacerItem \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QStatusBar \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qstatusbar.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialog \
 		../../QT/6.10.1/mingw_64/include/QtCore/QEvent \
@@ -2868,15 +2925,6 @@ debug/Check_Mainwindow.o: src/Check/Check_Mainwindow.cpp include/Check/Check_Mai
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDateEdit \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QGroupBox \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qgroupbox.h \
 		include/Style/StyleManager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Check_Mainwindow.o src\Check\Check_Mainwindow.cpp
 
@@ -3085,6 +3133,32 @@ debug/LoginDialog.o: src/LogIn/LoginDialog.cpp include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QString \
 		../../QT/6.10.1/mingw_64/include/QtCore/QEvent \
+		ui_LoginDialog.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
+		../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qframe.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QLineEdit \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlineedit.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextcursor.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextformat.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qpen.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextoption.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QPushButton \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/LogIn/dbmanager.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/QSqlDatabase \
 		../../QT/6.10.1/mingw_64/include/QtSql/qsqldatabase.h \
@@ -3102,7 +3176,6 @@ debug/LoginDialog.o: src/LogIn/LoginDialog.cpp include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QVariantMap \
 		../../QT/6.10.1/mingw_64/include/QtCore/qvariantmap.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QMap \
-		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.10.1/mingw_64/include/QtCore/QDateTime \
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
@@ -3591,25 +3664,52 @@ debug/SalesStatisticsDialog.o: src/Product/SalesStatisticsDialog.cpp include/Pro
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qhttpheaders.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qmetaobject.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QSharedDataPointer \
+		../../QT/6.10.1/mingw_64/include/QtCore/QString \
+		../../QT/6.10.1/mingw_64/include/QtCore/QUrl \
+		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
+		../../QT/6.10.1/mingw_64/include/QtCore/q26numeric.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslerror.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qcryptographichash.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qssl.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QFlags \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QMetaType \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkRequest \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkReply \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QIODevice \
 		include/LogIn/dbmanager.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/QSqlDatabase \
 		../../QT/6.10.1/mingw_64/include/QtSql/qsqldatabase.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/qtsqlglobal.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/qtsql-config.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/qtsqlexports.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/qmetaobject.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/QSqlQuery \
 		../../QT/6.10.1/mingw_64/include/QtSql/qsqlquery.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/QString \
 		../../QT/6.10.1/mingw_64/include/QtCore/QDebug \
 		../../QT/6.10.1/mingw_64/include/QtCore/QCryptographicHash \
-		../../QT/6.10.1/mingw_64/include/QtCore/qcryptographichash.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/QSqlError \
 		../../QT/6.10.1/mingw_64/include/QtSql/qsqlerror.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QVariantMap \
 		../../QT/6.10.1/mingw_64/include/QtCore/qvariantmap.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QMap \
-		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.10.1/mingw_64/include/QtCore/QDateTime \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qboxlayout.h \
@@ -3633,7 +3733,27 @@ debug/SalesStatisticsDialog.o: src/Product/SalesStatisticsDialog.cpp include/Pro
 		../../QT/6.10.1/mingw_64/include/QtCore/QTextStream \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QMessageBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qmessagebox.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QInputDialog \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qinputdialog.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlineedit.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextcursor.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextformat.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qpen.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextoption.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QTextEdit \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtextedit.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QJsonDocument \
+		../../QT/6.10.1/mingw_64/include/QtCore/qjsondocument.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qjsonvalue.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qcborvalue.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qcborcommon.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/quuid.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QJsonObject \
+		../../QT/6.10.1/mingw_64/include/QtCore/qjsonobject.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QJsonArray \
+		../../QT/6.10.1/mingw_64/include/QtCore/qjsonarray.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\SalesStatisticsDialog.o src\Product\SalesStatisticsDialog.cpp
 
 debug/StockDialog.o: src/Product/StockDialog.cpp include/Product/StockDialog.h \
@@ -4237,6 +4357,10 @@ debug/main.o: src/main.cpp include/LogIn/LoginDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QTimer \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimer.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDialogButtonBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QSplitter \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qsplitter.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
 		src/Style/StyleManager.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h
@@ -4698,6 +4822,20 @@ debug/Product.o: src/Product/Product.cpp include/Product/Product.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimer.h \
 		ui_Product.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/QAction \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QStatusBar \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qstatusbar.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QToolBar \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtoolbar.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/Product/AddProductDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QSpinBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qspinbox.h \
@@ -4710,17 +4848,38 @@ debug/Product.o: src/Product/Product.cpp include/Product/Product.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
 		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QTableView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qtableview.h \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractitemview.h \
-		../../QT/6.10.1/mingw_64/include/QtCore/qitemselectionmodel.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QPair \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/QHeaderView \
-		../../QT/6.10.1/mingw_64/include/QtWidgets/qheaderview.h \
 		include/Product/SalesStatisticsDialog.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QDateEdit \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qhttpheaders.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QSharedDataPointer \
+		../../QT/6.10.1/mingw_64/include/QtCore/QUrl \
+		../../QT/6.10.1/mingw_64/include/QtCore/q26numeric.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslerror.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qssl.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QFlags \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QMetaType \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkRequest \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/QNetworkReply \
+		../../QT/6.10.1/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QIODevice \
 		include/Style/StyleManager.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QMessageBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -4963,6 +5122,47 @@ debug/registerdialog.o: src/LogIn/registerdialog.cpp include/LogIn/registerdialo
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		ui_registerdialog.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/QIcon \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QComboBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qcombobox.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qvalidator.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qregularexpression.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qslider.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qstyle.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtabbar.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qrubberband.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qframe.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QFrame \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QLineEdit \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlineedit.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextcursor.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextformat.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qpen.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextoption.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QPushButton \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QSpinBox \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qspinbox.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/Style/StyleManager.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QMessageBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -5173,6 +5373,36 @@ debug/memberregisterdialog.o: src/LogIn/memberregisterdialog.cpp include/LogIn/m
 		../../QT/6.10.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/qcalendar.h \
 		ui_memberregisterdialog.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QApplication \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QDateEdit \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qtimezone.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qvalidator.h \
+		../../QT/6.10.1/mingw_64/include/QtCore/qregularexpression.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QLabel \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlabel.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qframe.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qpicture.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QLineEdit \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qlineedit.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextcursor.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextformat.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qpen.h \
+		../../QT/6.10.1/mingw_64/include/QtGui/qtextoption.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QPushButton \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../QT/6.10.1/mingw_64/include/QtWidgets/QWidget \
 		include/LogIn/dbmanager.h \
 		../../QT/6.10.1/mingw_64/include/QtSql/QSqlDatabase \
 		../../QT/6.10.1/mingw_64/include/QtSql/qsqldatabase.h \
@@ -5191,15 +5421,12 @@ debug/memberregisterdialog.o: src/LogIn/memberregisterdialog.cpp include/LogIn/m
 		../../QT/6.10.1/mingw_64/include/QtCore/QVariantMap \
 		../../QT/6.10.1/mingw_64/include/QtCore/qvariantmap.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QMap \
-		../../QT/6.10.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.10.1/mingw_64/include/QtCore/QDateTime \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/QMessageBox \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qmessagebox.h \
 		../../QT/6.10.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../QT/6.10.1/mingw_64/include/QtCore/QRegularExpression \
-		../../QT/6.10.1/mingw_64/include/QtCore/qregularexpression.h \
-		../../QT/6.10.1/mingw_64/include/QtGui/QRegularExpressionValidator \
-		../../QT/6.10.1/mingw_64/include/QtGui/qvalidator.h
+		../../QT/6.10.1/mingw_64/include/QtGui/QRegularExpressionValidator
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\memberregisterdialog.o src\LogIn\memberregisterdialog.cpp
 
 debug/saleshistorydialog.o: src/LogIn/saleshistorydialog.cpp include/LogIn/SalesHistoryDialog.h \

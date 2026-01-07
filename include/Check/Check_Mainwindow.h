@@ -22,6 +22,9 @@
 #include<QAbstractButton>
 #include<QTimer>
 #include<QDialogButtonBox>
+#include<QSplitter>
+#include<QCheckBox>
+#include<QPushButton>
 
 
 
@@ -217,6 +220,7 @@ private slots:
 
     void on_historyBtn_clicked();
 
+
 signals:
     void backToLogin();  //返回登录的信号
 
@@ -240,6 +244,12 @@ private:
 
     QString username;  //新增，接受收银员名称
     int cashierID=-1;      //储存收银员的ID
+
+    QSplitter* m_splitter;  // 用于分割界面的可拖动控件
+
+    QCheckBox* m_showAllProductsCheckBox;  // 显示所有商品的复选框
+
+    QPushButton* m_aiAnalysisBtn;  // AI分析按钮
 
 
 

@@ -41,7 +41,11 @@ template <> constexpr inline auto SalesStatisticsDialog::qt_create_metaobjectdat
         "SalesStatisticsDialog",
         "onRefreshClicked",
         "",
-        "onExportClicked"
+        "onExportClicked",
+        "onAIAnalysisClicked",
+        "onAIReplyFinished",
+        "QNetworkReply*",
+        "reply"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -49,6 +53,12 @@ template <> constexpr inline auto SalesStatisticsDialog::qt_create_metaobjectdat
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onExportClicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onAIAnalysisClicked'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onAIReplyFinished'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 6, 7 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -74,10 +84,11 @@ void SalesStatisticsDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         switch (_id) {
         case 0: _t->onRefreshClicked(); break;
         case 1: _t->onExportClicked(); break;
+        case 2: _t->onAIAnalysisClicked(); break;
+        case 3: _t->onAIReplyFinished((*reinterpret_cast<std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *SalesStatisticsDialog::metaObject() const
@@ -99,14 +110,14 @@ int SalesStatisticsDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }

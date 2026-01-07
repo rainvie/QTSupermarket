@@ -8,12 +8,21 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QHeaderView>
-#include<QMessageBox>
+#include <QMessageBox>
+#include <QInputDialog>
+#include <QTextEdit>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QUrl>
 
 SalesStatisticsDialog::SalesStatisticsDialog(QWidget *parent) : QDialog(parent)
 {
     setWindowTitle("商品销量统计");
-    setMinimumSize(800, 600);
+    setMinimumSize(900, 650);  // 增加最小窗口大小以确保按钮可见
+
+    // 初始化成员变量
+    apiKey = "";  // 初始化API密钥为空
 
     setupUI();
     loadSalesData();
@@ -72,9 +81,37 @@ void SalesStatisticsDialog::setupUI()
     // 按钮
     QPushButton *refreshBtn = new QPushButton("刷新", this);
     QPushButton *exportBtn = new QPushButton("导出CSV", this);
+    aiAnalysisBtn = new QPushButton("🤖 AI分析", this);  // 添加表情符号使其更显眼
+    aiAnalysisBtn->setStyleSheet("QPushButton {"
+                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                "                                    stop: 0 #FF5722, stop: 1 #E64A19);"  // 渐变橙红色背景
+                                "    border: 2px solid #B71C1C;"      // 红色边框
+                                "    color: white;"                   // 白色文字
+                                "    padding: 12px 24px;"             // 更大的內边距
+                                "    text-align: center;"             // 文字居中
+                                "    font-size: 15px;"               // 更大的字体
+                                "    font-weight: bold;"              // 加粗字体
+                                "    border-radius: 8px;"             // 更大的圆角
+                                "}"
+                                "QPushButton:hover {"
+                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                "                                    stop: 0 #FF7043, stop: 1 #D84315);"  // 悬停时的渐变色
+                                "}"
+                                "QPushButton:pressed {"
+                                "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                "                                    stop: 0 #E64A19, stop: 1 #BF360C);"  // 按下时的渐变色
+                                "    border: 2px solid #8E0E00;"      // 按下时更深的边框
+                                "    padding: 11px 23px;"             // 按下时稍微缩小内边距，产生按下效果
+                                "}");
+    aiAnalysisBtn->setMinimumSize(120, 50);  // 设置更大的最小尺寸以确保按钮显眼
+    aiAnalysisBtn->setMaximumWidth(150);     // 限制最大宽度
 
     connect(refreshBtn, &QPushButton::clicked, this, &SalesStatisticsDialog::onRefreshClicked);
     connect(exportBtn, &QPushButton::clicked, this, &SalesStatisticsDialog::onExportClicked);
+    connect(aiAnalysisBtn, &QPushButton::clicked, this, &SalesStatisticsDialog::onAIAnalysisClicked);
+
+    // 初始化网络管理器
+    networkManager = new QNetworkAccessManager(this);
 
     // 主布局
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -82,9 +119,10 @@ void SalesStatisticsDialog::setupUI()
     mainLayout->addWidget(tableView);
 
     QHBoxLayout *buttonLayout = new QHBoxLayout;
-    buttonLayout->addStretch();
     buttonLayout->addWidget(refreshBtn);
     buttonLayout->addWidget(exportBtn);
+    buttonLayout->addWidget(aiAnalysisBtn);  // 将AI分析按钮放在导出按钮旁边
+    buttonLayout->addStretch();  // 添加伸缩空间到末尾
 
     mainLayout->addLayout(buttonLayout);
 }
@@ -246,4 +284,157 @@ void SalesStatisticsDialog::onExportClicked()
 
     file.close();
     QMessageBox::information(this, "导出完成", "销售数据已成功导出");
+}
+
+void SalesStatisticsDialog::onAIAnalysisClicked()
+{
+    // 首先检查是否设置了API密钥
+    if (apiKey.isEmpty()) {
+        // 提示用户输入API密钥
+        bool ok;
+        QString key = QInputDialog::getText(this, "设置API密钥",
+                                          "请输入AI API密钥:",
+                                          QLineEdit::Password,
+                                          "",
+                                          &ok);
+        if (ok && !key.isEmpty()) {
+            setAPIKey(key);
+        } else {
+            QMessageBox::warning(this, "警告", "未设置API密钥，无法进行AI分析");
+            return;
+        }
+    }
+
+    // 执行AI分析
+    performAIAnalysis();
+}
+
+void SalesStatisticsDialog::performAIAnalysis()
+{
+    // 禁用按钮以防止重复点击
+    aiAnalysisBtn->setEnabled(false);
+    aiAnalysisBtn->setText("分析中...");
+
+    // 从表格中收集销售数据
+    QString salesData = "商品销售统计分析:\n";
+    salesData += "商品ID,商品名称,销量,销售额\n";
+
+    for (int row = 0; row < salesModel->rowCount() - 1; ++row) { // -1 to exclude total row
+        QStringList rowData;
+        for (int col = 0; col < salesModel->columnCount(); ++col) {
+            QStandardItem* item = salesModel->item(row, col);
+            rowData << item->text();
+        }
+        salesData += rowData.join(",") + "\n";
+    }
+
+    // 创建AI分析的提示
+    QString prompt = QString("请分析以下销售数据并提供商业洞察：\n%1\n\n"
+                           "请提供以下分析：\n"
+                           "1. 销量最高的商品及其原因分析\n"
+                           "2. 销量较低的商品及改进建议\n"
+                           "3. 整体销售趋势分析\n"
+                           "4. 商品组合优化建议\n"
+                           "5. 未来销售预测").arg(salesData);
+
+    // 创建API请求
+    QUrl url("https://api.openai.com/v1/chat/completions");  // 这里使用OpenAI API作为示例
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setRawHeader("Authorization", QString("Bearer %1").arg(apiKey).toUtf8());
+
+    // 准备请求体
+    QJsonObject jsonBody;
+    jsonBody["model"] = "gpt-3.5-turbo";
+    QJsonArray messages;
+    QJsonObject message;
+    message["role"] = "user";
+    message["content"] = prompt;
+    messages.append(message);
+    jsonBody["messages"] = messages;
+    jsonBody["temperature"] = 0.7;
+
+    QJsonDocument jsonDoc(jsonBody);
+    QByteArray data = jsonDoc.toJson();
+
+    // 发送请求
+    QNetworkReply* reply = networkManager->post(request, data);
+
+    // 连接完成信号
+    connect(reply, &QNetworkReply::finished,
+            this, [this, reply]() {
+                onAIReplyFinished(reply);
+            });
+}
+
+void SalesStatisticsDialog::onAIReplyFinished(QNetworkReply* reply)
+{
+    // 恢复按钮状态
+    aiAnalysisBtn->setEnabled(true);
+    aiAnalysisBtn->setText("AI分析");
+
+    // 检查是否有错误
+    if (reply->error() != QNetworkReply::NoError) {
+        QMessageBox::critical(this, "错误",
+                             QString("AI分析请求失败: %1").arg(reply->errorString()));
+        reply->deleteLater();
+        return;
+    }
+
+    // 读取响应数据
+    QByteArray response = reply->readAll();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(response);
+
+    if (jsonResponse.isObject()) {
+        QJsonObject obj = jsonResponse.object();
+        if (obj.contains("choices") && obj["choices"].isArray()) {
+            QJsonArray choices = obj["choices"].toArray();
+            if (!choices.isEmpty()) {
+                QJsonObject choice = choices[0].toObject();
+                QJsonObject message = choice["message"].toObject();
+                QString content = message["content"].toString();
+
+                // 显示AI分析结果
+                QDialog *resultDialog = new QDialog(this);
+                resultDialog->setWindowTitle("AI分析结果");
+                resultDialog->resize(800, 600);
+
+                QVBoxLayout *layout = new QVBoxLayout(resultDialog);
+
+                QTextEdit *textEdit = new QTextEdit(resultDialog);
+                textEdit->setPlainText(content);
+                textEdit->setReadOnly(true);
+
+                QPushButton *closeBtn = new QPushButton("关闭", resultDialog);
+                connect(closeBtn, &QPushButton::clicked, resultDialog, &QDialog::accept);
+
+                layout->addWidget(textEdit);
+                layout->addWidget(closeBtn);
+
+                resultDialog->show();
+                resultDialog->exec();
+            } else {
+                QMessageBox::warning(this, "警告", "AI分析未返回结果");
+            }
+        } else {
+            // 检查是否有错误信息
+            if (obj.contains("error")) {
+                QJsonObject errorObj = obj["error"].toObject();
+                QString errorMsg = errorObj["message"].toString();
+                QMessageBox::critical(this, "API错误",
+                                     QString("AI分析API返回错误: %1").arg(errorMsg));
+            } else {
+                QMessageBox::warning(this, "警告", "AI分析返回格式不正确");
+            }
+        }
+    } else {
+        QMessageBox::warning(this, "警告", "AI分析返回格式不正确");
+    }
+
+    reply->deleteLater();
+}
+
+void SalesStatisticsDialog::setAPIKey(const QString &key)
+{
+    apiKey = key;
 }

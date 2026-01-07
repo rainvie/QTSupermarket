@@ -1,4 +1,4 @@
-QT       += core gui sql widgets charts
+QT       += core gui sql widgets charts network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 win32:RC_ICONS = assets/1.ico
