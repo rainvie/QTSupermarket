@@ -104,7 +104,7 @@
       <item>
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string> 收银员名：</string>
+         <string>收银员名：</string>
         </property>
        </widget>
       </item>
@@ -126,7 +126,7 @@
       <item>
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>     密码：</string>
+         <string>密码：</string>
         </property>
        </widget>
       </item>
@@ -162,7 +162,7 @@
       <item>
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string> 确认密码：</string>
+         <string>确认密码：</string>
         </property>
        </widget>
       </item>
@@ -198,7 +198,7 @@
       <item>
        <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>     性别：</string>
+         <string>性别：</string>
         </property>
        </widget>
       </item>
@@ -215,20 +215,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>80</width>
           <height>16777215</height>
-         </size>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>100</width>
-          <height>0</height>
          </size>
         </property>
         <property name="currentText">
@@ -258,7 +252,7 @@
       <item>
        <widget class="QLabel" name="label_8">
         <property name="text">
-         <string>     年龄：</string>
+         <string>年龄：</string>
         </property>
        </widget>
       </item>
@@ -272,20 +266,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>80</width>
           <height>16777215</height>
-         </size>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>100</width>
-          <height>0</height>
          </size>
         </property>
         <property name="maximum">

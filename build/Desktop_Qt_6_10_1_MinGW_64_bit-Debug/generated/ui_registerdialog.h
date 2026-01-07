@@ -206,9 +206,8 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(genderCombo->sizePolicy().hasHeightForWidth());
         genderCombo->setSizePolicy(sizePolicy);
-        genderCombo->setMinimumSize(QSize(80, 0));
-        genderCombo->setMaximumSize(QSize(100, 16777215));
-        genderCombo->setSizeIncrement(QSize(100, 0));
+        genderCombo->setMinimumSize(QSize(60, 0));
+        genderCombo->setMaximumSize(QSize(80, 16777215));
 
         horizontalLayout_7->addWidget(genderCombo);
 
@@ -226,9 +225,8 @@ public:
         ageSpinBox->setObjectName("ageSpinBox");
         sizePolicy.setHeightForWidth(ageSpinBox->sizePolicy().hasHeightForWidth());
         ageSpinBox->setSizePolicy(sizePolicy);
-        ageSpinBox->setMinimumSize(QSize(80, 0));
-        ageSpinBox->setMaximumSize(QSize(100, 16777215));
-        ageSpinBox->setSizeIncrement(QSize(100, 0));
+        ageSpinBox->setMinimumSize(QSize(60, 0));
+        ageSpinBox->setMaximumSize(QSize(80, 16777215));
         ageSpinBox->setMaximum(120);
 
         horizontalLayout_8->addWidget(ageSpinBox);
@@ -276,18 +274,18 @@ public:
         label_2->setText(QCoreApplication::translate("RegisterDialog", "\347\256\241\347\220\206\345\221\230\350\264\246\345\217\267\357\274\232", nullptr));
         label_3->setText(QCoreApplication::translate("RegisterDialog", "\347\256\241\347\220\206\345\221\230\345\257\206\347\240\201\357\274\232", nullptr));
         codeshow->setText(QString());
-        label_4->setText(QCoreApplication::translate("RegisterDialog", " \346\224\266\351\223\266\345\221\230\345\220\215\357\274\232", nullptr));
-        label_6->setText(QCoreApplication::translate("RegisterDialog", "     \345\257\206\347\240\201\357\274\232", nullptr));
+        label_4->setText(QCoreApplication::translate("RegisterDialog", "\346\224\266\351\223\266\345\221\230\345\220\215\357\274\232", nullptr));
+        label_6->setText(QCoreApplication::translate("RegisterDialog", "\345\257\206\347\240\201\357\274\232", nullptr));
         codeshow_2->setText(QString());
-        label_5->setText(QCoreApplication::translate("RegisterDialog", " \347\241\256\350\256\244\345\257\206\347\240\201\357\274\232", nullptr));
+        label_5->setText(QCoreApplication::translate("RegisterDialog", "\347\241\256\350\256\244\345\257\206\347\240\201\357\274\232", nullptr));
         codeshow_3->setText(QString());
-        label_7->setText(QCoreApplication::translate("RegisterDialog", "     \346\200\247\345\210\253\357\274\232", nullptr));
+        label_7->setText(QCoreApplication::translate("RegisterDialog", "\346\200\247\345\210\253\357\274\232", nullptr));
         genderCombo->setItemText(0, QCoreApplication::translate("RegisterDialog", "\347\224\267", nullptr));
         genderCombo->setItemText(1, QCoreApplication::translate("RegisterDialog", "\345\245\263", nullptr));
         genderCombo->setItemText(2, QCoreApplication::translate("RegisterDialog", "\345\205\266\344\273\226", nullptr));
 
         genderCombo->setCurrentText(QCoreApplication::translate("RegisterDialog", "\347\224\267", nullptr));
-        label_8->setText(QCoreApplication::translate("RegisterDialog", "     \345\271\264\351\276\204\357\274\232", nullptr));
+        label_8->setText(QCoreApplication::translate("RegisterDialog", "\345\271\264\351\276\204\357\274\232", nullptr));
         registerButton->setText(QCoreApplication::translate("RegisterDialog", "\346\263\250\345\206\214", nullptr));
         backButton->setText(QCoreApplication::translate("RegisterDialog", "\350\277\224\345\233\236", nullptr));
     } // retranslateUi
