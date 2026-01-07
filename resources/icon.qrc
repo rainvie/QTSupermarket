@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/LogIn">
+        <file>../icon/LogIn/codeshow.png</file>
+        <file>../icon/LogIn/shide.png</file>
+        <file>../icon/LogIn/sshow.png</file>
+        <file>../icon/LogIn/history.png</file>
+    </qresource>
+    <qresource prefix="/Product"/>
+    <qresource prefix="/">
+        <file>../icon/Product/Add.png</file>
+        <file>../icon/Product/Delete.png</file>
+        <file>../icon/Product/Out.png</file>
+        <file>../icon/Product/Put.png</file>
+        <file>../icon/Product/Statistics.png</file>
+        <file>../icon/Product/NumIn.png</file>
+        <file>../icon/Product/NumOut.png</file>
+        <file>../icon/Product/Exit.png</file>
+    </qresource>
+</RCC>
