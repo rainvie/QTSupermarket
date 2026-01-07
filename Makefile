@@ -278,6 +278,7 @@ Makefile: supermarket.pro ../../QT/6.10.1/mingw_64/mkspecs/win32-g++/qmake.conf 
 		../../QT/6.10.1/mingw_64/mkspecs/features/qt_config.prf \
 		../../QT/6.10.1/mingw_64/mkspecs/win32-g++/qmake.conf \
 		../../QT/6.10.1/mingw_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../QT/6.10.1/mingw_64/mkspecs/features/exclusive_builds.prf \
 		../../QT/6.10.1/mingw_64/mkspecs/features/toolchain.prf \
 		../../QT/6.10.1/mingw_64/mkspecs/features/default_pre.prf \
@@ -310,9 +311,9 @@ Makefile: supermarket.pro ../../QT/6.10.1/mingw_64/mkspecs/win32-g++/qmake.conf 
 		../../QT/6.10.1/mingw_64/lib/Qt6Sql.prl \
 		../../QT/6.10.1/mingw_64/lib/Qt6Core.prl \
 		../../QT/6.10.1/mingw_64/lib/Qt6EntryPoint.prl \
-		.qmake.stash \
 		../../QT/6.10.1/mingw_64/mkspecs/features/build_pass.prf \
-		resources/icon.qrc
+		icon.qrc \
+		re1.qrc
 	$(QMAKE) -o Makefile supermarket.pro
 ../../QT/6.10.1/mingw_64/mkspecs/features/spec_pre.prf:
 ../../QT/6.10.1/mingw_64/mkspecs/features/device_config.prf:
@@ -522,6 +523,7 @@ Makefile: supermarket.pro ../../QT/6.10.1/mingw_64/mkspecs/win32-g++/qmake.conf 
 ../../QT/6.10.1/mingw_64/mkspecs/features/qt_config.prf:
 ../../QT/6.10.1/mingw_64/mkspecs/win32-g++/qmake.conf:
 ../../QT/6.10.1/mingw_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../QT/6.10.1/mingw_64/mkspecs/features/exclusive_builds.prf:
 ../../QT/6.10.1/mingw_64/mkspecs/features/toolchain.prf:
 ../../QT/6.10.1/mingw_64/mkspecs/features/default_pre.prf:
@@ -554,9 +556,9 @@ supermarket.pro:
 ../../QT/6.10.1/mingw_64/lib/Qt6Sql.prl:
 ../../QT/6.10.1/mingw_64/lib/Qt6Core.prl:
 ../../QT/6.10.1/mingw_64/lib/Qt6EntryPoint.prl:
-.qmake.stash:
 ../../QT/6.10.1/mingw_64/mkspecs/features/build_pass.prf:
-resources/icon.qrc:
+icon.qrc:
+re1.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile supermarket.pro
 
