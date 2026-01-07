@@ -10,7 +10,7 @@ debug/registerdialog.o
 debug/memberregisterdialog.o
 debug/saleshistorydialog.o
 debug/StyleManager.o
-debug/qrc_Icon.o
+debug/qrc_icon.o
 debug/moc_Check_Mainwindow.o
 debug/moc_LoginDialog.o
 debug/moc_dbmanager.o

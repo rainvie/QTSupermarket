@@ -10,7 +10,7 @@ release/registerdialog.o
 release/memberregisterdialog.o
 release/saleshistorydialog.o
 release/StyleManager.o
-release/qrc_Icon.o
+release/qrc_icon.o
 release/moc_Check_Mainwindow.o
 release/moc_LoginDialog.o
 release/moc_dbmanager.o
